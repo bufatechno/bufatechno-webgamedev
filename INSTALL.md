@@ -10,7 +10,7 @@ This skill tested 2026 stack: `three@0.175.0`, `babylon@8.15.0`, `vite@7` (`base
 - Modern browser (Chrome 107+, Edge 107+, Firefox 104+, Safari 16+ — Vite baseline).
 - No `npm install` needed for skill itself — AI reads `SKILL.md` markdown directly. `npm install` is only for generated games (`game/package.json`).
 
-## ZCode — PRIMARY (verified `zcode.z.ai/en/docs/skill`)
+## ZCode — PRIMARY
 
 **Official path (same on all OS — `~` = home):**
 
@@ -51,7 +51,7 @@ git clone https://github.com/bufatechno/bufatechno-webgamedev.git ~/.zcode/skill
 # Settings → Skills → Refresh
 ```
 
-## Claude Desktop & Claude Code (CLI) — PRIMARY (verified `agensi.io` + `claude.com/docs/skills`)
+## Claude Desktop & Claude Code (CLI) — PRIMARY
 
 **Path — same on all OS, `~` = home:**
 
