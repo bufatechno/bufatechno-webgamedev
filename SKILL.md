@@ -4,7 +4,7 @@ description: BUFATECHNO WEB GAME DEV — Professional skill for building complet
 license: MIT
 compatibility: zcode, claude
 metadata:
-  version: "2.0.2"
+  version: "2.0.3"
   author: BUFATECHNO
   homepage: https://github.com/bufatechno/bufatechno-webgamedev
 ---

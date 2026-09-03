@@ -1,6 +1,6 @@
 {
   "name": "bufatechno-webgamedev",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Professional skill for building complete, production-ready web games with Three.js (WebGPU/TSL) or Babylon.js (WebGPU/Havok)",
   "author": {
     "name": "BUFATECHNO",
@@ -9,5 +9,6 @@
   "homepage": "https://github.com/bufatechno/bufatechno-webgamedev",
   "repository": "https://github.com/bufatechno/bufatechno-webgamedev",
   "license": "MIT",
-  "keywords": ["threejs", "babylonjs", "webgpu", "gamedev", "threejs-game", "skill"]
+  "keywords": ["threejs", "babylonjs", "webgpu", "gamedev", "threejs-game", "skill"],
+  "skills": "skills"
 }
