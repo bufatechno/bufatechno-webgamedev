@@ -1,4 +1,4 @@
-# BUFATECHNO WEB GAME DEV — Professional Edition v2.0.1
+# BUFATECHNO WEB GAME DEV — v2.0.1
 
 Professional skill **optimized for ZCode & Claude (primary)** to build **complete, production-ready 3D web games** using **Three.js (WebGPU/WebGL2 + TSL)** or **Babylon.js (WebGPU/WebGL2 + Havok)** — layaknya programmer game terkenal.
 
