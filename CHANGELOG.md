@@ -1,5 +1,19 @@
 # Changelog
 
+## v2.0.3 — 2026-09-03
+
+### Added
+- Added dual marketplace for ZCode (`.zcode-plugin/marketplace.json`) and Claude Code (`.claude-plugin/marketplace.json`) with plugin `bufatechno-webgamedev` at `plugins/bufatechno-webgamedev`
+- Bundled skill for marketplace distribution at `plugins/bufatechno-webgamedev/skills/bufatechno-webgamedev`
+
+### Fixed
+- Fixed skill not appearing in autocomplete by declaring explicit `skills` path in plugin manifests
+- Corrected marketplace and plugin versions to ensure update detection
+
+### Changed
+- Updated installation guide with marketplace quick install for ZCode and Claude Code
+- Updated README structure documentation to include marketplace manifests and plugin layout
+
 ## v2.0.2 — 2026-09-03
 
 ### Changed
