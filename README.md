@@ -73,6 +73,9 @@ Skill will: intake 10 questions → design professional architecture → select 
 bufatechno-webgamedev/
 ├── SKILL.md                       # Main skill — v2 professional ~375 lines (core) + Weak-Model Quick Start
 ├── README.md                      # This file (v2.0.2)
+├── INSTALL.md                     # Installation guide — ZCode & Claude (Linux/macOS/Windows)
+├── CHANGELOG.md                   # Version history (v2.0.2 English-only, v2.0.1, v2.0.0, v1.0.0)
+├── LICENSE                        # MIT
 ├── package.json                   # v2.0.2, MIT, three 0.175, vite 7, babylon 8.15, node >=20.19
 ├── references/                    # 20 deep-dive docs (2026, anti-slop included)
 │   ├── threejs-complete.md         # WebGPURenderer+TSL, PBR, post, GLTF, Timer
@@ -99,8 +102,11 @@ bufatechno-webgamedev/
 │   ├── scaffold-threejs.js        # Three 0.175 + Vite 7 + animation/vfx dirs + shims
 │   └── scaffold-babylonjs.js      # Babylon 8.15 + Havok + Vite 7
 └── assets/
-    ├── templates/threejs/         # index.html (shims+TSL), package, vite baseline
-    ├── templates/babylonjs/       # index.html, package 8.15, vite baseline
+    ├── images/
+    │   └── qris.jpeg              # QRIS donation QR code
+    ├── templates/
+    │   ├── threejs/               # index.html (shims+TSL), package, vite baseline
+    │   └── babylonjs/             # index.html, package 8.15, vite baseline
     └── pwa/                       # manifest.json + sw.js (cache v2)
 ```
 
