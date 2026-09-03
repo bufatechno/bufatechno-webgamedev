@@ -13,7 +13,7 @@
 ### Notes
 - No functional changes to runtime, scaffolding logic, or dependencies — `three@0.175.0`, `babylon@8.15.0`, `vite@7`, Node `>=20.19` unchanged
 
-## v2.0.1 (Professional Edition + Anti-Slop & Weak-Model) — 2026-09-03
+## v2.0.1 — 2026-09-03
 
 ### Major Upgrade — Complete & Professional like a renowned game programmer
 
@@ -37,7 +37,7 @@
 - Improved compatibility for smaller models with graceful fallbacks and simplified setup flow
 - Standardized installation paths and package metadata across documentation and templates
 
-## v2.0.0 (initial Professional — superseded by v2.0.1 fixes above, history kept)
+## v2.0.0 — 2026-09-03
 
 ### Major Upgrade — Complete & Professional like a renowned game programmer (v2.0.0 base, patched v2.0.1)
 
