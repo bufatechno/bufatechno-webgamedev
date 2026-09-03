@@ -44,6 +44,19 @@ bufatechno-webgamedev/
 ├── CHANGELOG.md                   # Version history
 ├── LICENSE                        # MIT
 ├── package.json                   # MIT, three 0.175, vite 7, babylon 8.15, node >=20.19
+├── .claude-plugin/
+│   └── marketplace.json           # Claude Code marketplace catalog (bufatechno-marketplace)
+├── .zcode-plugin/
+│   └── marketplace.json           # ZCode marketplace catalog (bufatechno-marketplace)
+├── plugins/
+│   └── bufatechno-webgamedev/     # Plugin (auto-installs skill on marketplace add)
+│       ├── .claude-plugin/plugin.json
+│       ├── .zcode-plugin/plugin.json
+│       └── skills/bufatechno-webgamedev/
+│           ├── SKILL.md           # Skill (bundled)
+│           ├── references/        # Bundled docs
+│           ├── assets/            # Bundled templates & QRIS
+│           └── scripts/           # Bundled scaffolds
 ├── references/                    # 20 deep-dive docs (2026, anti-slop included)
 │   ├── threejs-complete.md         # WebGPURenderer+TSL, PBR, post, GLTF, Timer
 │   ├── babylonjs-complete.md       # Engine, clustered lights, Frame Graph, Havok, Splatting

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://www.schemastore.org/claude-code-marketplace.json",
+  "name": "bufatechno-marketplace",
+  "description": "BUFATECHNO marketplace for web game development plugins",
+  "owner": {
+    "name": "BUFATECHNO",
+    "email": "bufatechno@example.com",
+    "url": "https://github.com/bufatechno"
+  },
+  "plugins": [
+    {
+      "name": "bufatechno-webgamedev",
+      "source": "./plugins/bufatechno-webgamedev",
+      "description": "Professional skill for building complete, production-ready web games with Three.js (WebGPU/TSL) or Babylon.js (WebGPU/Havok)",
+      "version": "2.0.2",
+      "author": {
+        "name": "BUFATECHNO",
+        "url": "https://github.com/bufatechno"
+      },
+      "homepage": "https://github.com/bufatechno/bufatechno-webgamedev",
+      "repository": "https://github.com/bufatechno/bufatechno-webgamedev",
+      "license": "MIT",
+      "keywords": ["threejs", "babylonjs", "webgpu", "tsl", "gamedev", "skill", "vfx", "physics"],
+      "category": "gamedev",
+      "tags": ["threejs", "babylonjs", "webgpu", "gamedev", "3d", "vfx"]
+    }
+  ]
+}

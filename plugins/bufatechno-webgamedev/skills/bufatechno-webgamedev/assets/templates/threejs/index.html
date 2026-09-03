@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--
+    BUFATECHNO WEB GAME DEV v2 — STARTER TEMPLATE (NOT FINAL)
+    Purpose: empty scaffold for `node scripts/scaffold-threejs.js`.
+    ⚠️ ANTI-SLOP: AI is FORBIDDEN to deliver this file as-is as a final game.
+       When building a real game, MUST replace design tokens, palette, font, HUD, overlay
+       per genre (see SKILL.md Anti-Slop Protocol + references/design-system.md).
+       Final game must have a unique identity, not generic "GAME TITLE".
+  -->
+  <title>Three.js Game — Starter (replace with game title)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+    /* Design Tokens — STARTER minimal, final MUST regenerate per game */
+    :root{
+      --bg:#0a0e13; --panel:rgba(16,22,30,0.72); --text:#e6edf3; --muted:#9aa8b3;
+      --accent:#55ccff; --accent-2:#7af0ff; --danger:#ff4d6d; --radius:14px;
+      --font-display:"Space Grotesk", system-ui, sans-serif; --font-body:"Inter", system-ui, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html, body { margin:0; height:100%; overflow:hidden; background:var(--bg); color:var(--text); font-family:var(--font-body); }
+    #app { position:absolute; inset:0; }
+    #hud { position:fixed; inset:0; pointer-events:none; }
+    /* HUD — starter example, final must be themed (racing: speedometer bottom, FPS: crosshair center) */
+    #hud-topbar{
+      position:absolute; top:14px; left:14px; right:14px; display:flex; gap:10px; justify-content:space-between;
+      font-size:13px; letter-spacing:.04em;
+    }
+    .hud-card{
+      background:var(--panel); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius); padding:10px 12px; min-width:140px;
+    }
+    .hud-card b{ font-family:var(--font-display); letter-spacing:.08em; font-size:11px; color:var(--muted); display:block; margin-bottom:4px }
+    #crosshair{
+      position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+      width:18px; height:18px; opacity:.85;
+    }
+    #crosshair::before, #crosshair::after{ content:''; position:absolute; background:var(--text); border-radius:1px }
+    #crosshair::before{ left:50%; top:0; width:2px; height:100%; transform:translateX(-50%) }
+    #crosshair::after{ top:50%; left:0; width:100%; height:2px; transform:translateY(-50%) }
+    #crosshair i{
+      position:absolute; inset:4px; border:1px solid var(--accent); border-radius:50%; opacity:.6;
+    }
+    #overlay{
+      position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+      background: radial-gradient(1200px 600px at 50% 0%, rgba(85,204,255,.18), transparent 60%),
+                  linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.88));
+      color:var(--text); cursor:pointer; z-index:10; text-align:center; padding:24px;
+    }
+    #overlay h1{
+      margin:0 0 8px; font-family:var(--font-display); font-size:clamp(28px, 5vw, 52px);
+      letter-spacing:.12em; text-transform:uppercase; line-height:.9;
+      text-shadow: 0 8px 30px rgba(85,204,255,.35);
+    }
+    #overlay h1 span{ color:var(--accent) }
+    #overlay .subtitle{ color:var(--muted); font-size:13px; letter-spacing:.18em; text-transform:uppercase; margin-bottom:18px }
+    #overlay .cta{
+      margin-top:18px; padding:12px 22px; border-radius:999px;
+      border:1px solid var(--accent); color:var(--accent); background:rgba(85,204,255,.08);
+      font-family:var(--font-display); letter-spacing:.16em; font-size:12px; text-transform:uppercase;
+      transition:transform .15s ease, background .15s ease;
+    }
+    #overlay:hover .cta{ transform:translateY(-1px); background:rgba(85,204,255,.14) }
+    #overlay .hint{ margin-top:10px; color:var(--muted); font-size:11px; letter-spacing:.08em }
+  </style>
+  <script async src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"></script>
+  <link rel="manifest" href="./public/manifest.json" />
+</head>
+<body>
+  <div id="app"></div>
+  <div id="hud">
+    <div id="hud-topbar">
+      <div class="hud-card"><b>STATUS</b> <span id="health">—</span> · <span id="score">—</span></div>
+      <div class="hud-card" style="text-align:right"><b>PERF</b> <span id="fps">—</span> fps</div>
+    </div>
+    <div id="crosshair"><i></i></div>
+  </div>
+  <div id="overlay" role="button" tabindex="0" aria-label="Start game">
+    <div class="subtitle">Bufatechno Starter — Replace Title & Theme Per Genre</div>
+    <h1>GAME <span>TITLE</span></h1>
+    <div class="cta">Click to Play — (AI must replace this text with themed version)</div>
+    <div class="hint">Starter template • Final game MUST custom HUD/overlay/palette per design-system.md</div>
+  </div>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.175.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.175.0/examples/jsm/",
+      "three/tsl": "https://cdn.jsdelivr.net/npm/three@0.175.0/examples/jsm/nodes/Nodes.js"
+    }
+  }
+  </script>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

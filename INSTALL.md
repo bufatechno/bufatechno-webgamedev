@@ -4,6 +4,25 @@
 
 This skill tested 2026 stack: `three@0.175.0`, `babylon@8.15.0`, `vite@7` (`baseline-widely-available`), Node `>=20.19.0`.
 
+## Quick Install via Marketplace (Recommended — auto-installs skill)
+
+The repository is a **dual marketplace** for both ZCode and Claude Code. Adding the marketplace automatically makes the `bufatechno-webgamedev` skill available.
+
+**ZCode:**
+1. Open **Settings → Plugins → Marketplace → Create → Add marketplace**
+2. Enter: `bufatechno/bufatechno-webgamedev` or `https://github.com/bufatechno/bufatechno-webgamedev.git`
+3. Find `bufatechno-webgamedev` under **Personal** → click **Install** → enable
+4. Verify: `Settings → Skills` now lists `bufatechno-webgamedev` (plugin skills)
+
+**Claude Code:**
+```bash
+/plugin marketplace add bufatechno/bufatechno-webgamedev
+/plugin install bufatechno-webgamedev@bufatechno-marketplace
+# verify
+/plugin
+```
+Marketplace manifests: `.zcode-plugin/marketplace.json` (ZCode) and `.claude-plugin/marketplace.json` (Claude) at repo root, plugin at `plugins/bufatechno-webgamedev` with skill `skills/bufatechno-webgamedev/SKILL.md` (see `zcode.z.ai/en/docs/plugin` and `code.claude.com/docs/en/plugin-marketplaces`).
+
 ## Requirements
 
 - **Node** `>=20.19.0` (Vite 7 drops Node 18, see `package.json:engines`). Check `node -v`.
