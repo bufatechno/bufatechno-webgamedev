@@ -1,8 +1,10 @@
-# BUFATECHNO WEB GAME DEV — v2.0.2
+# BUFATECHNO WEB GAME DEV
 
 Professional skill **optimized for ZCode & Claude (primary)** to build **complete, production-ready 3D web games** using **Three.js (WebGPU/WebGL2 + TSL)** or **Babylon.js (WebGPU/WebGL2 + Havok)** — like a renowned game programmer.
 
 > 2026 stack: `three@^0.175.0` (WebGPURenderer + TSL NodeMaterial), `@babylonjs/*@^8.15.0` (clustered lighting, Frame Graph, Gaussian Splatting), `vite@^7.0.0` (baseline-widely-available, Rolldown). Primary support: ZCode & Claude.
+
+> **Quick Links:** [Installation](INSTALL.md) • [Changelog](CHANGELOG.md) • [Skill](SKILL.md) • [Support](#support--donate-via-qris)
 
 ## What This Skill Does — Complete & Professional
 
@@ -20,41 +22,6 @@ Capable of comprehensively building **project, logic, visual, graphics, effects,
 - **Optimization**: instanced/ThinInstances, frustum LOD, texture atlas, DPR cap 2, worker chunk, draw calls mobile ≤50 desktop ≤200, 60 FPS 100+ objects
 - **Shipping**: manual matrix 40+ items, Playwright smoke, deploy GitHub Pages/Netlify/Vercel/itch.io, PWA, Sentry/gtag
 
-## Installation — Primary: ZCode & Claude (Linux, macOS, Windows ✅)
-
-**Support verified 2026 for all three OS — see table at `INSTALL.md:13`:**
-
-### For ZCode (Primary) — Linux / macOS / Windows
-```bash
-# Linux / macOS (bash/zsh):
-cp -r bufatechno-webgamedev ~/.zcode/skills/
-# Windows PowerShell:
-Copy-Item -Recurse bufatechno-webgamedev $env:USERPROFILE\.zcode\skills\
-# Windows Git Bash: cp -r bufatechno-webgamedev ~/.zcode/skills/
-# Open ZCode → Settings → Skills → Refresh → toggle ON
-# Usage: $bufatechno-webgamedev create FPS game Three.js with skeletal animation
-```
-
-### For Claude Desktop & Claude Code (CLI) (Primary) — Linux / macOS / Windows
-```bash
-# Linux / macOS — Personal (all projects):
-cp -r bufatechno-webgamedev ~/.claude/skills/
-# Windows PowerShell — Personal:
-Copy-Item -Recurse bufatechno-webgamedev $env:USERPROFILE\.claude\skills\
-# Project (team, all OS, commit to repo):
-mkdir -p .claude/skills && cp -r bufatechno-webgamedev .claude/skills/
-# Verify: ls ~/.claude/skills/bufatechno-webgamedev/SKILL.md && restart → /skills
-```
-
-See `INSTALL.md:13` for full OS table + troubleshooting verified 2026 (ZCode `~/.zcode` / `%USERPROFILE%\.zcode`, Claude `~/.claude` / `C:\Users\you\.claude`).
-
-<details><summary>Other Platforms (optional — OpenCode, Cursor)</summary>
-
-- **OpenCode**: `cp -r bufatechno-webgamedev ~/.config/opencode/skills/` or `.opencode/skills/` project — see `INSTALL.md:11`
-- **Cursor**: `mkdir -p .cursor/skills/bufatechno-webgamedev && cp -r bufatechno-webgamedev/* .cursor/skills/bufatechno-webgamedev/` — project-based `.cursor/skills/` (not global `~/.cursor`)
-
-</details>
-
 ## How to Use
 
 Auto trigger for:
@@ -67,16 +34,16 @@ Auto trigger for:
 
 Skill will: intake 10 questions → design professional architecture → select framework (matrix 2026) → scaffold (CDN/Vite) → implement 15 systems in order → validate 15 checklist → deliver runnable.
 
-## Skill Structure v2
+## Skill Structure
 
 ```
 bufatechno-webgamedev/
-├── SKILL.md                       # Main skill — v2 professional ~375 lines (core) + Weak-Model Quick Start
-├── README.md                      # This file (v2.0.2)
+├── SKILL.md                       # Main skill — professional ~375 lines (core) + Weak-Model Quick Start
+├── README.md                      # This file
 ├── INSTALL.md                     # Installation guide — ZCode & Claude (Linux/macOS/Windows)
-├── CHANGELOG.md                   # Version history (v2.0.2 English-only, v2.0.1, v2.0.0, v1.0.0)
+├── CHANGELOG.md                   # Version history
 ├── LICENSE                        # MIT
-├── package.json                   # v2.0.2, MIT, three 0.175, vite 7, babylon 8.15, node >=20.19
+├── package.json                   # MIT, three 0.175, vite 7, babylon 8.15, node >=20.19
 ├── references/                    # 20 deep-dive docs (2026, anti-slop included)
 │   ├── threejs-complete.md         # WebGPURenderer+TSL, PBR, post, GLTF, Timer
 │   ├── babylonjs-complete.md       # Engine, clustered lights, Frame Graph, Havok, Splatting
@@ -110,7 +77,7 @@ bufatechno-webgamedev/
     └── pwa/                       # manifest.json + sw.js (cache v2)
 ```
 
-## Design Principles v2.0.2
+## Design Principles
 
 1. **Famous-dev level** — playable 5 min, win/lose, anim+VFX+sound coherent, extendable code, anti-slop REQUIRED.
 2. **Self-contained** — procedural where possible, KTX2/SOG compressed where files needed, PWA cache.
@@ -123,13 +90,6 @@ bufatechno-webgamedev/
 ## Triggering Tips
 
 `SKILL.md` description is intentionally pushy — covers `animation`, `VFX`, `2D sprite`, `particle`, `skeleton`. If not triggering, prompt: "use the bufatechno-webgamedev skill".
-
-## Updating
-
-```bash
-cd /path/to/parent
-zip -r bufatechno-webgamedev.zip bufatechno-webgamedev/
-```
 
 ## Support — Donate via QRIS
 
@@ -149,4 +109,4 @@ MIT — use, modify, distribute freely.
 
 ## Author
 
-BUFATECHNO — Professional Web Game Dev Skill v2.0 (2026). Research-backed: Three.js TSL docs, Babylon.js 9.0 release, Vite 7 baseline.
+BUFATECHNO — Professional Web Game Dev Skill (2026). Research-backed: Three.js TSL docs, Babylon.js 9.0 release, Vite 7 baseline.

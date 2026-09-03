@@ -1,4 +1,4 @@
-# Skill Installation Guide — BUFATECHNO WEB GAME DEV v2.0.2
+# Skill Installation Guide — BUFATECHNO WEB GAME DEV
 
 > **PRIMARY SUPPORT: ZCode & Claude.** This guide is optimized for both platforms. Other platforms (Cursor, OpenCode, etc.) are in the Appendix at the end.
 
@@ -18,36 +18,36 @@ This skill tested 2026 stack: `three@0.175.0`, `babylon@8.15.0`, `vite@7` (`base
 |---|---|---|
 | **Linux** | `~/.zcode/skills/<name>/SKILL.md` | `/home/you/.zcode/skills/bufatechno-webgamedev/SKILL.md` |
 | **macOS** | `~/.zcode/skills/<name>/SKILL.md` | `/Users/you/.zcode/skills/bufatechno-webgamedev/SKILL.md` |
-| **Windows** | `%USERPROFILE%\.zcode\skills\<name>\SKILL.md` | `C:\Users\you\.zcode\skills\bufatechno-webgamedev\SKILL.md` (= `~/.zcode/skills/` di Git Bash) |
+| **Windows** | `%USERPROFILE%\.zcode\skills\<name>\SKILL.md` | `C:\Users\you\.zcode\skills\bufatechno-webgamedev\SKILL.md` (= `~/.zcode/skills/` in Git Bash) |
 
 Directory name = skill name, must be `SKILL.md` uppercase. Manage via **Settings → Skills** → Search / Enable switch / Refresh.
 
 **Install — Linux / macOS (bash/zsh):**
 ```bash
 cp -r bufatechno-webgamedev ~/.zcode/skills/
-# Settings → Skills → Refresh → aktifkan toggle bufatechno-webgamedev ✅
+# Settings → Skills → Refresh → enable toggle for bufatechno-webgamedev ✅
 ```
 
 **Install — Windows (PowerShell / Git Bash):**
 ```powershell
 # PowerShell (normal):
 Copy-Item -Recurse bufatechno-webgamedev $env:USERPROFILE\.zcode\skills\
-# Git Bash (sama kayak Linux):
+# Git Bash (same as Linux):
 cp -r bufatechno-webgamedev ~/.zcode/skills/
 # Settings → Skills → Refresh → toggle ON
 ```
 
 **Alternative Import (without cp, auto scan Claude/Codex/OpenClaw):**
 ```
-Settings → Skills → Import → scans external dirs → pilih Symlink (live sync) atau Copy (decoupled) → Global/Project
+Settings → Skills → Import → scans external dirs → choose Symlink (live sync) or Copy (decoupled) → Global/Project
 Invoke: $bufatechno-webgamedev create FPS game Three.js with skeletal animation
-Slash menu: ketik /
+Slash menu: type /
 ```
 
 For team distribution: flat `skills/<name>/SKILL.md` via plugin marketplace (GitHub repo/git URL/local dir) — nested `skills/group/name` is not readable. Via `git` (all OS):
 ```bash
 git clone https://github.com/bufatechno/bufatechno-webgamedev.git ~/.zcode/skills/bufatechno-webgamedev
-# Windows Git Bash: sama; PowerShell: git clone https://github.com/bufatechno/bufatechno-webgamedev.git $env:USERPROFILE\.zcode\skills\bufatechno-webgamedev
+# Windows Git Bash: same; PowerShell: git clone https://github.com/bufatechno/bufatechno-webgamedev.git $env:USERPROFILE\.zcode\skills\bufatechno-webgamedev
 # Settings → Skills → Refresh
 ```
 
@@ -59,7 +59,7 @@ git clone https://github.com/bufatechno/bufatechno-webgamedev.git ~/.zcode/skill
 |---|---|---|
 | **Linux** | `~/.claude/skills/<name>/SKILL.md` → `/home/you/.claude/...` | `.claude/skills/<name>/SKILL.md` (repo root) |
 | **macOS** | `~/.claude/skills/<name>/SKILL.md` → `/Users/you/.claude/...` | `.claude/skills/<name>/SKILL.md` |
-| **Windows** | `%USERPROFILE%\.claude\skills\<name>\SKILL.md` → `C:\Users\you\.claude\...` (= `~/.claude/` di Git Bash) | `.claude\skills\<name>\SKILL.md` |
+| **Windows** | `%USERPROFILE%\.claude\skills\<name>\SKILL.md` → `C:\Users\you\.claude\...` (= `~/.claude/` in Git Bash) | `.claude\skills\<name>\SKILL.md` |
 
 Load order: `project → user → plugin → built-in` (first wins). Legacy `~/Library/Application Support/Claude/skills/` is now unified to `~/.claude/skills/`.
 
@@ -71,7 +71,7 @@ cp -r bufatechno-webgamedev ~/.claude/skills/
 mkdir -p .claude/skills && cp -r bufatechno-webgamedev .claude/skills/
 # Verify:
 ls ~/.claude/skills/bufatechno-webgamedev/SKILL.md && head -20 ~/.claude/skills/bufatechno-webgamedev/SKILL.md
-# must be --- name: bufatechno-webgamedev / description (1-1024 char) / license: MIT / compatibility: zcode, claude / metadata.version: 2.0.2
+# must be --- name: bufatechno-webgamedev / description (1-1024 char) / license: MIT / compatibility: zcode, claude / metadata.version: <current version>
 # Restart → /skills must list bufatechno-webgamedev
 ```
 
@@ -83,7 +83,7 @@ Copy-Item -Recurse bufatechno-webgamedev $env:USERPROFILE\.claude\skills\
 New-Item -ItemType Directory -Force .claude\skills; Copy-Item -Recurse bufatechno-webgamedev .claude\skills\
 # Verify:
 dir $env:USERPROFILE\.claude\skills\bufatechno-webgamedev\SKILL.md; Get-Content $env:USERPROFILE\.claude\skills\bufatechno-webgamedev\SKILL.md -TotalCount 20
-# Git Bash (sama kayak Linux):
+# Git Bash (same as Linux):
 cp -r bufatechno-webgamedev ~/.claude/skills/
 ```
 
@@ -96,7 +96,7 @@ mkdir -p ~/.claude/skills/bufatechno-webgamedev && curl -fsSL https://raw.github
 
 **Troubleshooting Claude (all OS):** nesting `~/.claude/skills/name/another-folder/SKILL.md` → FAIL (1 level flat), YAML `--- name/description` must be valid, skills discovered at session start → restart.
 
-## Verification (ZCode & Claude, v2.0.2 — all OS)
+## Verification (ZCode & Claude — all OS)
 
 | OS | ZCode check | Claude check |
 |---|---|---|
@@ -104,8 +104,8 @@ mkdir -p ~/.claude/skills/bufatechno-webgamedev && curl -fsSL https://raw.github
 | **macOS** | Same (`/Users/you/.zcode/...`) → `Settings → Skills` toggle ON | Same (`/Users/you/.claude/...`) → `/skills` slash |
 | **Windows** | PowerShell: `dir $env:USERPROFILE\.zcode\skills\bufatechno-webgamedev\SKILL.md` ; Git Bash: `ls ~/.zcode/...` | PowerShell: `dir $env:USERPROFILE\.claude\skills\bufatechno-webgamedev\SKILL.md` ; Git Bash: `ls ~/.claude/...` |
 
-1. Open assistant (ZCode atau Claude Code)
-2. ZCode: `Settings → Skills` must show `bufatechno-webgamedev` v2.0.2 toggle ON
+1. Open assistant (ZCode or Claude Code)
+2. ZCode: `Settings → Skills` must show `bufatechno-webgamedev` toggle ON
 3. Claude: ` /skills ` slash command must list `bufatechno-webgamedev`
 4. Test trigger: type `$bufatechno-webgamedev` (ZCode) or ask `"Build a simple FPS game in Three.js with skeletal animation"` — skill auto-triggers, infer palette/HUD themed (anti-slop: no generic `GAME TITLE`)
 5. Cross-OS file check:
@@ -113,7 +113,7 @@ mkdir -p ~/.claude/skills/bufatechno-webgamedev && curl -fsSL https://raw.github
 ```bash
 # Linux/macOS:
 ls bufatechno-webgamedev/references | wc -l  # must be 20
-head -n 5 bufatechno-webgamedev/SKILL.md    # name: bufatechno-webgamedev, description, license: MIT, compatibility: zcode, claude, metadata.version: 2.0.2
+head -n 5 bufatechno-webgamedev/SKILL.md    # name: bufatechno-webgamedev, description, license: MIT, compatibility: zcode, claude, metadata.version: <current version>
 # Windows PowerShell:
 (dir bufatechno-webgamedev\references).Count  # must be 20
 Get-Content bufatechno-webgamedev\SKILL.md -TotalCount 5
@@ -123,9 +123,9 @@ Get-Content bufatechno-webgamedev\SKILL.md -TotalCount 5
 
 **Linux / macOS:**
 ```bash
-rm -rf ~/.zcode/skills/bufatechno-webgamedev             # ZCode (atau Settings → Skills → toggle OFF)
+rm -rf ~/.zcode/skills/bufatechno-webgamedev             # ZCode (or Settings → Skills → toggle OFF)
 rm -rf ~/.claude/skills/bufatechno-webgamedev            # Claude personal
-rm -rf .claude/skills/bufatechno-webgamedev              # Claude project (.claude di repo)
+rm -rf .claude/skills/bufatechno-webgamedev              # Claude project (.claude in repo)
 # Restart
 ```
 
@@ -134,20 +134,20 @@ rm -rf .claude/skills/bufatechno-webgamedev              # Claude project (.clau
 Remove-Item -Recurse -Force $env:USERPROFILE\.zcode\skills\bufatechno-webgamedev
 Remove-Item -Recurse -Force $env:USERPROFILE\.claude\skills\bufatechno-webgamedev
 Remove-Item -Recurse -Force .claude\skills\bufatechno-webgamedev
-# Restart; ZCode juga support UI toggle tanpa rm
+# Restart; ZCode also supports UI toggle without rm
 ```
 
 **Windows (Git Bash):** same as Linux `rm -rf ~/.zcode/...` and `~/.claude/...`
 
 ## Updating (all OS)
 
-No rebuild — AI baca markdown langsung. Update via git:
+No rebuild — AI reads markdown directly. Update via git:
 
 **Linux / macOS:**
 ```bash
 git -C ~/.zcode/skills/bufatechno-webgamedev pull
 git -C ~/.claude/skills/bufatechno-webgamedev pull
-# Atau reinstall:
+# Or reinstall:
 rm -rf ~/.zcode/skills/bufatechno-webgamedev && cp -r bufatechno-webgamedev ~/.zcode/skills/
 rm -rf ~/.claude/skills/bufatechno-webgamedev && cp -r bufatechno-webgamedev ~/.claude/skills/
 ```
@@ -164,7 +164,7 @@ cd /parent/directory && zip -r bufatechno-webgamedev.zip bufatechno-webgamedev/
 # Windows PowerShell: Compress-Archive -Path bufatechno-webgamedev -DestinationPath bufatechno-webgamedev.zip
 ```
 
-## Troubleshooting (ZCode & Claude, v2.0.2)
+## Troubleshooting (ZCode & Claude)
 
 | Issue | Fix (ZCode / Claude) |
 |---|---|
@@ -183,7 +183,7 @@ cd /parent/directory && zip -r bufatechno-webgamedev.zip bufatechno-webgamedev/
 
 <details><summary><b>OpenCode</b> — verified <code>opencode.ai/docs/skills</code> (supported but not primary)</summary>
 
-OpenCode discovery 6 lokasi (`skill` tool on-demand):
+OpenCode discovery 6 locations (`skill` tool on-demand):
 - `~/.config/opencode/skills/<name>/SKILL.md` (global)
 - `.opencode/skills/<name>/SKILL.md` (project)
 - Also reads `~/.claude/skills/`, `.claude/skills/`, `~/.agents/skills/`, `.agents/skills/`
@@ -210,7 +210,7 @@ mkdir -p .opencode/skills && cp -r bufatechno-webgamedev .opencode/skills/
 
 Any markdown reader:
 
-- `SKILL.md` — YAML `name: bufatechno-webgamedev` + `description` (822 char) + `license: MIT` + `compatibility: zcode, claude` + `metadata.version: 2.0.2` (spec agentskills.io: only name/description/license/compatibility/metadata/allowed-tools)
+- `SKILL.md` — YAML `name: bufatechno-webgamedev` + `description` (822 char) + `license: MIT` + `compatibility: zcode, claude` + `metadata.version: <current version>` (spec agentskills.io: only name/description/license/compatibility/metadata/allowed-tools)
 - `references/*.md` — 20 docs on-demand, `design-system.md` required before HUD
 - `assets/templates/` — starter (NOT final) — Anti-Slop Protocol
 - `assets/pwa/` — `manifest.json` + `sw.js`
