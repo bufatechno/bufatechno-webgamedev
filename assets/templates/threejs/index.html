@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!--
-    BUFATECHNO WEB GAME DEV v2 — STARTER TEMPLATE (BUKAN FINAL)
-    Fungsi: scaffold kosong untuk `node scripts/scaffold-threejs.js`.
-    ⚠️ ANTI-SLOP: AI DILARANG deliver file ini apa adanya sebagai game final.
-       Saat build game nyata, WAJIB ganti design tokens, palette, font, HUD, overlay
-       sesuai genre (lihat SKILL.md Anti-Slop Protocol + references/design-system.md).
-       Final game harus punya identitas unik, bukan "GAME TITLE" generik.
+    BUFATECHNO WEB GAME DEV v2 — STARTER TEMPLATE (NOT FINAL)
+    Purpose: empty scaffold for `node scripts/scaffold-threejs.js`.
+    ⚠️ ANTI-SLOP: AI is FORBIDDEN to deliver this file as-is as a final game.
+       When building a real game, MUST replace design tokens, palette, font, HUD, overlay
+       per genre (see SKILL.md Anti-Slop Protocol + references/design-system.md).
+       Final game must have a unique identity, not generic "GAME TITLE".
   -->
   <title>Three.js Game — Starter (replace with game title)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <style>
-    /* Design Tokens — STARTER minimal, final WAJIB generate ulang per game */
+    /* Design Tokens — STARTER minimal, final MUST regenerate per game */
     :root{
       --bg:#0a0e13; --panel:rgba(16,22,30,0.72); --text:#e6edf3; --muted:#9aa8b3;
       --accent:#55ccff; --accent-2:#7af0ff; --danger:#ff4d6d; --radius:14px;
@@ -24,7 +24,7 @@
     html, body { margin:0; height:100%; overflow:hidden; background:var(--bg); color:var(--text); font-family:var(--font-body); }
     #app { position:absolute; inset:0; }
     #hud { position:fixed; inset:0; pointer-events:none; }
-    /* HUD — contoh starter, final harus themed (racing: speedometer bottom, FPS: crosshair center) */
+    /* HUD — starter example, final must be themed (racing: speedometer bottom, FPS: crosshair center) */
     #hud-topbar{
       position:absolute; top:14px; left:14px; right:14px; display:flex; gap:10px; justify-content:space-between;
       font-size:13px; letter-spacing:.04em;
@@ -79,10 +79,10 @@
     <div id="crosshair"><i></i></div>
   </div>
   <div id="overlay" role="button" tabindex="0" aria-label="Start game">
-    <div class="subtitle">Bufatechno Starter — Ganti Judul & Tema Sesuai Genre</div>
+    <div class="subtitle">Bufatechno Starter — Replace Title & Theme Per Genre</div>
     <h1>GAME <span>TITLE</span></h1>
-    <div class="cta">Click to Play — (AI wajib ganti teks ini themed)</div>
-    <div class="hint">Starter template • Final game WAJIB custom HUD/overlay/palette per design-system.md</div>
+    <div class="cta">Click to Play — (AI must replace this text with themed version)</div>
+    <div class="hint">Starter template • Final game MUST custom HUD/overlay/palette per design-system.md</div>
   </div>
   <script type="importmap">
   {

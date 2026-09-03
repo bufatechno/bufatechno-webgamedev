@@ -4,7 +4,7 @@ description: BUFATECHNO WEB GAME DEV — Professional skill for building complet
 license: MIT
 compatibility: zcode, claude
 metadata:
-  version: "2.0.1"
+  version: "2.0.2"
   author: BUFATECHNO
   homepage: https://github.com/bufatechno/bufatechno-webgamedev
 ---
@@ -28,21 +28,21 @@ A game is **NOT finished** until ALL true:
 
 If one missing, iterate. You ship **games, not demos**.
 
-## Weak Model Quick Start — WAJIB / REQUIRED (≤14B or low-context)
+## Weak Model Quick Start — REQUIRED (≤14B or low-context)
 
 > **If you are a small/weak model (Gemma 2B/7B, local 7B, any non-Claude), READ THIS FIRST. Follow Quick Start, not full 353 lines at once.**
 
 **4-step fallback (skip asking if confused):**
 1. **Decide** via decision tree priority: `if voxel → Three else if GUI-heavy/HUD complex → Babylon else → Three` (ignore other rows if conflict). Default `Three.js WebGPURenderer` with `WebGLRenderer` fallback — 300KB tree-shaken.
-2. **Scaffold Path A** (CDN, zero build): copy `assets/templates/threejs/index.html` minimal, **tapi WAJIB** ganti tokens per `design-system.md` sebelum ship (jangan deliver template generik).
-3. **Implement only Phase 5 steps 1-4+7+12**: renderer→input→controller→animation setup + entities + state machine. Skip VFX/post unless requested — deliver playable slice dulu.
-4. **Validate 5 first items Phase 6** + `design-system.md` checklist (no GAME TITLE). Jika gagal, iterate.
+2. **Scaffold Path A** (CDN, zero build): copy `assets/templates/threejs/index.html` minimal, **but REQUIRED** to replace tokens per `design-system.md` before shipping (do not deliver generic template).
+3. **Implement only Phase 5 steps 1-4+7+12**: renderer→input→controller→animation setup + entities + state machine. Skip VFX/post unless requested — deliver playable slice first.
+4. **Validate 5 first items Phase 6** + `design-system.md` checklist (no GAME TITLE). If failed, iterate.
 
 **Weak-model guards:**
-- Baca references **hanya 1 file per phase** — jangan load 19 file sekaligus (context overflow). Prioritas: `threejs-complete.md §1-7` + `game-architecture.md §1` + `design-system.md`.
-- Gunakan `THREE.Timer ? new THREE.Timer() : new THREE.Clock()` fallback — jangan asumsi Timer ada.
-- Jika prompt bentrok multi-row, pakai priority di atas. Tampilkan asumsi di README `Inferred: ...`.
-- Tampilkan `Inferred: genre, palette, camera` di README agar user tahu AI menebak akurat.
+- Read references **only 1 file per phase** — do not load 19 files at once (context overflow). Priority: `threejs-complete.md §1-7` + `game-architecture.md §1` + `design-system.md`.
+- Use `THREE.Timer ? new THREE.Timer() : new THREE.Clock()` fallback — do not assume Timer exists.
+- If prompt conflicts across multi-row, use priority above. Show assumptions in README `Inferred: ...`.
+- Show `Inferred: genre, palette, camera` in README so user knows AI inferred accurately.
 
 ## Workflow — 6 Phases (Follow Exactly)
 
@@ -195,7 +195,7 @@ npm run dev
 ```
 Use Path A unless user mentions build, multiplayer, or >50k lines.
 
-> ⚠️ SCAFFOLD IS NOT SHIPPABLE — Output `node scaffold-*.js` adalah starter generik. WAJIB apply `design-system.md` tokens + themed HUD/overlay sebelum Phase 6. Jangan pernah ship scaffold apa adanya (akan fail Anti-Slop checklist).
+> ⚠️ SCAFFOLD IS NOT SHIPPABLE — Output `node scaffold-*.js` is a generic starter. REQUIRED to apply `design-system.md` tokens + themed HUD/overlay before Phase 6. Never ship scaffold as-is (will fail Anti-Slop checklist).
 
 ### Phase 5: Implement Core Systems — Professional Order
 
@@ -263,18 +263,18 @@ Before ship, every box must tick (see `references/testing-deployment.md` diagnos
 - `references/asset-pipeline.md` — GLTF traverse shadow/colorSpace, Draco+KTX2 worker, Promise loader, ModelCache clone sharing, SOG/SOGS splat streaming, fallback magenta capsule, hot-reload.
 
 ### Quality & Shipping
-- `references/design-system.md` — **ANTI-SLOP** Prompt inference, design tokens, palette+font per genre, themed HUD/overlay, validasi anti-generik. **Wajib baca sebelum tulis HTML/HUD.**
+- `references/design-system.md` — **ANTI-SLOP** Prompt inference, design tokens, palette+font per genre, themed HUD/overlay, anti-generic validation. **REQUIRED reading before writing HTML/HUD.**
 - `references/performance-optimization.md` — Profiling renderer.info.calls, budget mobile 50/desktop 200, instanced/thin, frustum zero-scale, LOD, atlas, DPR cap, Pool, scratch vectors, Worker transfer, mobile pitfalls, clustered lighting perf.
 - `references/testing-deployment.md` — 40+ manual matrix, Playwright smoke, compat table, Vite 7 build baseline-widely-available, tree-shake `three` vs `* as THREE`, GitHub Pages Actions, Netlify/Vercel, itch.io zip, PWA manifest+sw, Sentry, gtag.
 - `references/multiplayer-networking.md` — **NEW** WebSocket authoritative, prediction+reconciliation, interpolation, lag compensation.
 - `references/webxr-vr.md` — **NEW** WebXR session, XR camera, controllers, locomotion.
 
-## Reading Convention — REQUIRED / WAJIB
+## Reading Convention — REQUIRED
 1. Read **fully** before coding that area — do not guess. Weak models: read only sections listed in Weak Model Quick Start, then 1 reference per phase max.
 2. Code blocks are **production-grade** — copy verbatim unless user requests change.
-3. If references conflict, **more specific wins** (fps-template overrides threejs-complete) — tapi `design-system.md` anti-slop **always wins** over template `pulse/#5cf` slop.
+3. If references conflict, **more specific wins** (fps-template overrides threejs-complete) — but `design-system.md` anti-slop **always wins** over template `pulse/#5cf` slop.
 4. Do not paraphrase references — just build the game.
-5. Decision priority `voxel > GUI-heavy > Three default` — jika prompt match multi-row, pakai urutan ini.
+5. Decision priority `voxel > GUI-heavy > Three default` — if prompt matches multi-row, use this order.
 
 ## Critical Implementation Rules — Professional Defaults
 
@@ -330,31 +330,31 @@ Every game must include:
 When done, tell user:
 - Absolute project path, run command, controls, what implemented (type, win/lose, anim, VFX, audio, UI, save), what NOT implemented, perf 60 FPS verification.
 
-## Anti-Slop Protocol — WAJIB untuk hasil profesional dari prompt sederhana
+## Anti-Slop Protocol — REQUIRED for professional results from simple prompts
 
-> Templates di `assets/templates/` adalah **STARTER KOSONG untuk scaffold** — BUKAN contoh final. AI dilarang copy-paste template mentah sebagai deliverable. Setiap game final WAJIB generate identitas unik.
+> Templates in `assets/templates/` are **EMPTY STARTER for scaffolding** — NOT final examples. AI must not copy-paste raw templates as deliverable. Every final game MUST generate a unique identity.
 
-**Aturan keras (hard fail jika dilanggar):**
-- **Dilarang placeholder generik**: `GAME TITLE`, `Description of the game goes here`, `TODO: Add controls here`, font `Courier New monospace` doang, `pulse 1.5s infinite`, warna `#5cf` default di semua game. Jika user prompt sederhana ("buat game balapan"), kamu WAJIB inferensi — jangan keluarkan generik.
-- **Wajib Design Tokens per game**: setiap deliverable generate `:root{ --bg, --accent, --accent-2, --text, --panel, --radius }` + `font` pairing unik sesuai genre. Contoh: racing → neon cyan/magenta + font `Orbitron+Inter` + hud angular; horror → desaturated olive + font `Cormorant Garamond` + vignette berat. Lihat `references/design-system.md`.
-- **Wajib Prompt Inference Engine**: prompt sederhana → AI harus **tebak akurat** tanpa tanya berlebihan:
-  - `buat game balapan` → infer: low-poly stylized, track loop, lap win, drift physics, minimap, speed HUD, exhaust particles, engine audio, third-person chase cam
-  - `game FPS sederhana` → infer: dark sci-fi palette, hitscan, recoil+shake, wave survival, crosshair dot + ammo counter, procedural hit sound
-  - Inferensi = 90% akurasi: pilih genre, palette, kamera, win/lose, 3 VFX, 4 audio cues otomatis. Jangan tanya ulang jika sudah jelas.
+**Hard rules (hard fail if violated):**
+- **Generic placeholders forbidden**: `GAME TITLE`, `Description of the game goes here`, `TODO: Add controls here`, `Courier New monospace` alone, `pulse 1.5s infinite`, default color `#5cf` in every game. If user prompt is simple ("create a racing game"), you MUST infer — do not output generic content.
+- **Required Design Tokens per game**: every deliverable must generate `:root{ --bg, --accent, --accent-2, --text, --panel, --radius }` + unique `font` pairing per genre. Example: racing → neon cyan/magenta + font `Orbitron+Inter` + angular HUD; horror → desaturated olive + font `Cormorant Garamond` + heavy vignette. See `references/design-system.md`.
+- **Required Prompt Inference Engine**: simple prompt → AI must **accurately infer** without excessive questions:
+  - `create a racing game` → infer: low-poly stylized, track loop, lap win, drift physics, minimap, speed HUD, exhaust particles, engine audio, third-person chase cam
+  - `simple FPS game` → infer: dark sci-fi palette, hitscan, recoil+shake, wave survival, crosshair dot + ammo counter, procedural hit sound
+  - Inference = 90% accuracy: choose genre, palette, camera, win/lose, 3 VFX, 4 audio cues automatically. Do not ask again if already clear.
 
-**Larangan Slop Visual:**
-- Satu game = satu palette (3-5 warna), bukan `background:#000` + `color:#fff` generik di semua output
-- Overlay `CLICK TO PLAY` harus themed: contoh racing `START ENGINE — PRESS ENTER`, horror `LIGHT THE TORCH TO ENTER`
-- HUD tidak boleh selalu `Health: <span>100</span>` di `top:10px` — ganti layout per genre (racing: bottom speedometer, FPS: center crosshair+bottom ammo)
-- Tidak boleh reuse layout/animasi sama persis antar game. Variasikan radius, shadow, grid, grain, scanline sesuai tema.
+**Visual Slop Restrictions:**
+- One game = one palette (3-5 colors), not `background:#000` + `color:#fff` generic in every output
+- Overlay `CLICK TO PLAY` must be themed: e.g. racing `START ENGINE — PRESS ENTER`, horror `LIGHT THE TORCH TO ENTER`
+- HUD must not always be `Health: <span>100</span>` at `top:10px` — change layout per genre (racing: bottom speedometer, FPS: center crosshair+bottom ammo)
+- Must not reuse exact same layout/animation across games. Vary radius, shadow, grid, grain, scanline per theme.
 
-**Validasi anti-slop sebelum ship:**
-- [ ] Tidak ada string `GAME TITLE` / `Description goes here` / `pulse 1.5s` sisa?
-- [ ] Palette & font unik (cek design-system.md) — bukan hitam-monospace generik?
-- [ ] Overlay & HUD themed ke genre — bukan copy template?
-- [ ] Minimal 1 custom procedural texture + 1 custom shader/tsl node berbeda tiap game?
+**Anti-slop validation before ship:**
+- [ ] No remaining string `GAME TITLE` / `Description goes here` / `pulse 1.5s`?
+- [ ] Unique palette & font (check design-system.md) — not generic black-monospace?
+- [ ] Overlay & HUD themed to genre — not template copy?
+- [ ] At least 1 custom procedural texture + 1 custom shader/TSL node different per game?
 
-Jika gagal, **regenerate visual layer** sampai identitas unik tercapai.
+If failed, **regenerate visual layer** until unique identity is achieved.
 
 ## Anti-Patterns — Forbidden
 
@@ -364,7 +364,7 @@ Jika gagal, **regenerate visual layer** sampai identitas unik tercapai.
 - Single 2000-line `main.js` — split per Phase 2.
 - Missing `dispose()` — leaks crash long sessions.
 - Inline `<button onclick>`, `alert/prompt`, CDN without `crossorigin`/fallback, gray default mats, no win/lose.
-- **Slop generik AI**: `GAME TITLE`, monospace doang, pulse generik, palette #000/#fff/#5cf di semua game — hard fail, lihat Anti-Slop Protocol di atas.
+- **Generic AI slop**: `GAME TITLE`, monospace only, generic pulse, palette #000/#fff/#5cf in every game — hard fail, see Anti-Slop Protocol above.
 
 ## When You Don't Know
 

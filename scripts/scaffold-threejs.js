@@ -35,14 +35,14 @@ const dirs = [
 
 dirs.forEach((d) => fs.mkdirSync(path.join(projectDir, d), { recursive: true }));
 
-// Common index.html — ANTI-SLOP: scaffold is starter, WAJIB customize per design-system.md before ship
+// Common index.html — ANTI-SLOP: scaffold is starter, MUST customize per design-system.md before ship
 const indexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>${name} — Starter (ganti judul themed)</title>
-  <!-- ANTI-SLOP: Starter palette — final game WAJIB generate tokens unik per genre (design-system.md) -->
+  <title>${name} — Starter (replace with themed title)</title>
+  <!-- ANTI-SLOP: Starter palette — final game MUST generate unique tokens per genre (design-system.md) -->
   <style>
     :root{ --bg:#0a0e13; --panel:rgba(16,22,30,.72); --text:#e6edf3; --muted:#9aa8b3; --accent:#55ccff; --accent-2:#7af0ff; --radius:14px; --font-display:"Space Grotesk",system-ui,sans-serif; --font-body:"Inter",system-ui,sans-serif; }
     html, body { margin:0; height:100%; overflow:hidden; background:var(--bg); color:var(--text); font-family:var(--font-body); }
@@ -57,7 +57,7 @@ const indexHtml = `<!DOCTYPE html>
 <body>
   <div id="app"></div>
   <div id="hud"></div>
-  <div id="overlay"><div style="font-family:var(--font-display); font-size:clamp(24px,4vw,44px); letter-spacing:.1em">\${name.toUpperCase()}</div><div class="hint">CLICK TO PLAY — GANTI TEKS THEMED PER GENRE</div><div style="margin-top:8px; color:var(--muted); font-size:11px">Starter anti-slop: ganti palette/HUD per design-system.md</div></div>
+  <div id="overlay"><div style="font-family:var(--font-display); font-size:clamp(24px,4vw,44px); letter-spacing:.1em">\${name.toUpperCase()}</div><div class="hint">CLICK TO PLAY — REPLACE WITH THEMED TEXT PER GENRE</div><div style="margin-top:8px; color:var(--muted); font-size:11px">Starter anti-slop: replace palette/HUD per design-system.md</div></div>
   <script type="importmap">
   {
     "imports": {
@@ -234,7 +234,7 @@ console.log(`  cd ${name}`);
 console.log(`  # Option A: open index.html in a browser (no build)`);
 console.log(`  # Option B: npm install && npm run dev (Vite dev server)`);
 console.log(``);
-console.log(`⚠️  ANTI-SLOP (WAJIB/REQUIRED): Scaffold starter GENERIK — jangan ship apa adanya!`);
-console.log(`   → Ganti palette/font/HUD/overlay per references/design-system.md sebelum Phase 6`);
-console.log(`   → Contoh: racing → neon cyan/magenta Orbitron, horror → olive Cormorant`);
+console.log(`⚠️  ANTI-SLOP (REQUIRED): Scaffold starter is GENERIC — do not ship as-is!`);
+console.log(`   → Replace palette/font/HUD/overlay per references/design-system.md before Phase 6`);
+console.log(`   → Example: racing → neon cyan/magenta Orbitron, horror → olive Cormorant`);
 console.log(`For full game code, see the SKILL.md reference at your skill install location.`);

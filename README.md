@@ -1,28 +1,28 @@
-# BUFATECHNO WEB GAME DEV — v2.0.1
+# BUFATECHNO WEB GAME DEV — v2.0.2
 
-Professional skill **optimized for ZCode & Claude (primary)** to build **complete, production-ready 3D web games** using **Three.js (WebGPU/WebGL2 + TSL)** or **Babylon.js (WebGPU/WebGL2 + Havok)** — layaknya programmer game terkenal.
+Professional skill **optimized for ZCode & Claude (primary)** to build **complete, production-ready 3D web games** using **Three.js (WebGPU/WebGL2 + TSL)** or **Babylon.js (WebGPU/WebGL2 + Havok)** — like a renowned game programmer.
 
 > 2026 stack: `three@^0.175.0` (WebGPURenderer + TSL NodeMaterial), `@babylonjs/*@^8.15.0` (clustered lighting, Frame Graph, Gaussian Splatting), `vite@^7.0.0` (baseline-widely-available, Rolldown). Primary support: ZCode & Claude.
 
-## What This Skill Does — Lengkap & Profesional
+## What This Skill Does — Complete & Professional
 
-Mampu menyusun **proyek, logika, visual, grafik, efek, suara, gambar 3D, gambar 2D, animasi** secara komprehensif:
+Capable of comprehensively building **project, logic, visual, graphics, effects, audio, 3D imagery, 2D imagery, animation**:
 
-- **Proyek terstruktur**: scaffold `src/world|player|animation|vfx|systems|assets|utils` + `public/manifest.json` + PWA `sw.js`, Path A CDN (double-click) atau Path B Vite 7
-- **Logika game**: fixed-timestep 1/60 + `THREE.Timer`, StateMachine, ECS, object Pool, AI behavior states, save IndexedDB, multiplayer prediction/reconciliation
-- **Visual & Grafik**: PBR/Standard/Physical + IBL, directional+hemi lights 2048² shadows, `FogExp2`, TSL `MeshStandardNodeMaterial` (WGSL/GLSL), clustered 1000 lights (Babylon 9), Frame Graph 40% mem save
-- **Efek (VFX)**: pooled particles (Points/InstancedMesh, Babylon Node Particles), post-processing bloom/vignette (EffectComposer/Frame Graph), volumetric light shafts, screen shake, hit flash, trails, decals, Gaussian Splatting `.splat/.ply/.spz/.sog`
-- **Suara**: procedural oscillators (shoot/hit/jump), file decode cache, positional HRTF panner, master/music/sfx routing, AudioContext resume on gesture + mute toggle
-- **Gambar 3D**: GLTF/GLB + Draco `gltf/` + KTX2 Basis worker, async loader + ModelCache clone, fallback magenta capsule, Gaussian Splat streaming/LOD, fallback primitives
-- **Gambar 2D**: procedural canvas textures (wood/stone/brick/grass/metal, 16px pixel art), atlas, Sprite sheets, normal map Sobel, CanvasTexture/DynamicTexture, SpriteMaterial
-- **Animasi**: `AnimationMixer`+`AnimationClip`+`AnimationAction`, `Timer` r183+, skeletal `SkinnedMesh`+`SkeletonHelper`, bone attach, `morphTargetInfluences`, weight blending + additive `makeClipAdditive`, bezier interpolation, retargeting (Babylon 9 tool), CCD IK
+- **Structured project**: scaffold `src/world|player|animation|vfx|systems|assets|utils` + `public/manifest.json` + PWA `sw.js`, Path A CDN (double-click) or Path B Vite 7
+- **Game logic**: fixed-timestep 1/60 + `THREE.Timer`, StateMachine, ECS, object Pool, AI behavior states, save IndexedDB, multiplayer prediction/reconciliation
+- **Visual & Graphics**: PBR/Standard/Physical + IBL, directional+hemi lights 2048² shadows, `FogExp2`, TSL `MeshStandardNodeMaterial` (WGSL/GLSL), clustered 1000 lights (Babylon 9), Frame Graph 40% mem save
+- **Effects (VFX)**: pooled particles (Points/InstancedMesh, Babylon Node Particles), post-processing bloom/vignette (EffectComposer/Frame Graph), volumetric light shafts, screen shake, hit flash, trails, decals, Gaussian Splatting `.splat/.ply/.spz/.sog`
+- **Audio**: procedural oscillators (shoot/hit/jump), file decode cache, positional HRTF panner, master/music/sfx routing, AudioContext resume on gesture + mute toggle
+- **3D imagery**: GLTF/GLB + Draco `gltf/` + KTX2 Basis worker, async loader + ModelCache clone, fallback magenta capsule, Gaussian Splat streaming/LOD, fallback primitives
+- **2D imagery**: procedural canvas textures (wood/stone/brick/grass/metal, 16px pixel art), atlas, Sprite sheets, normal map Sobel, CanvasTexture/DynamicTexture, SpriteMaterial
+- **Animation**: `AnimationMixer`+`AnimationClip`+`AnimationAction`, `Timer` r183+, skeletal `SkinnedMesh`+`SkeletonHelper`, bone attach, `morphTargetInfluences`, weight blending + additive `makeClipAdditive`, bezier interpolation, retargeting (Babylon 9 tool), CCD IK
 - **Game types**: FPS, voxel/sandbox, third-person, platformer, racing, RPG, tower defense, top-down, multiplayer, WebXR/VR
-- **Optimasi**: instanced/ThinInstances, frustum LOD, texture atlas, DPR cap 2, worker chunk, draw calls mobile ≤50 desktop ≤200, 60 FPS 100+ objects
-- **Ship**: manual matrix 40+ items, Playwright smoke, deploy GitHub Pages/Netlify/Vercel/itch.io, PWA, Sentry/gtag
+- **Optimization**: instanced/ThinInstances, frustum LOD, texture atlas, DPR cap 2, worker chunk, draw calls mobile ≤50 desktop ≤200, 60 FPS 100+ objects
+- **Shipping**: manual matrix 40+ items, Playwright smoke, deploy GitHub Pages/Netlify/Vercel/itch.io, PWA, Sentry/gtag
 
 ## Installation — Primary: ZCode & Claude (Linux, macOS, Windows ✅)
 
-**Support verified 2026 untuk ketiga OS — lihat tabel di `INSTALL.md:13`:**
+**Support verified 2026 for all three OS — see table at `INSTALL.md:13`:**
 
 ### For ZCode (Primary) — Linux / macOS / Windows
 ```bash
@@ -31,33 +31,33 @@ cp -r bufatechno-webgamedev ~/.zcode/skills/
 # Windows PowerShell:
 Copy-Item -Recurse bufatechno-webgamedev $env:USERPROFILE\.zcode\skills\
 # Windows Git Bash: cp -r bufatechno-webgamedev ~/.zcode/skills/
-# Buka ZCode → Settings → Skills → Refresh → toggle ON
-# Pakai: $bufatechno-webgamedev buat game FPS Three.js dengan skeletal animation
+# Open ZCode → Settings → Skills → Refresh → toggle ON
+# Usage: $bufatechno-webgamedev create FPS game Three.js with skeletal animation
 ```
 
 ### For Claude Desktop & Claude Code (CLI) (Primary) — Linux / macOS / Windows
 ```bash
-# Linux / macOS — Personal (semua project):
+# Linux / macOS — Personal (all projects):
 cp -r bufatechno-webgamedev ~/.claude/skills/
 # Windows PowerShell — Personal:
 Copy-Item -Recurse bufatechno-webgamedev $env:USERPROFILE\.claude\skills\
-# Project (team, semua OS, commit ke repo):
+# Project (team, all OS, commit to repo):
 mkdir -p .claude/skills && cp -r bufatechno-webgamedev .claude/skills/
-# Verifikasi: ls ~/.claude/skills/bufatechno-webgamedev/SKILL.md && restart → /skills
+# Verify: ls ~/.claude/skills/bufatechno-webgamedev/SKILL.md && restart → /skills
 ```
 
-Lihat `INSTALL.md:13` untuk tabel OS lengkap + troubleshooting verified 2026 (ZCode `~/.zcode` / `%USERPROFILE%\.zcode`, Claude `~/.claude` / `C:\Users\you\.claude`).
+See `INSTALL.md:13` for full OS table + troubleshooting verified 2026 (ZCode `~/.zcode` / `%USERPROFILE%\.zcode`, Claude `~/.claude` / `C:\Users\you\.claude`).
 
 <details><summary>Other Platforms (optional — OpenCode, Cursor)</summary>
 
-- **OpenCode**: `cp -r bufatechno-webgamedev ~/.config/opencode/skills/` atau `.opencode/skills/` project — lihat `INSTALL.md:11`
-- **Cursor**: `mkdir -p .cursor/skills/bufatechno-webgamedev && cp -r bufatechno-webgamedev/* .cursor/skills/bufatechno-webgamedev/` — project-based `.cursor/skills/` (bukan global `~/.cursor`)
+- **OpenCode**: `cp -r bufatechno-webgamedev ~/.config/opencode/skills/` or `.opencode/skills/` project — see `INSTALL.md:11`
+- **Cursor**: `mkdir -p .cursor/skills/bufatechno-webgamedev && cp -r bufatechno-webgamedev/* .cursor/skills/bufatechno-webgamedev/` — project-based `.cursor/skills/` (not global `~/.cursor`)
 
 </details>
 
 ## How to Use
 
-Trigger otomatis untuk:
+Auto trigger for:
 - "Build me an FPS game in Three.js with skeletal animation"
 - "Create voxel game with particles and sound"
 - "Make third-person with bloom and sprite HUD"
@@ -65,15 +65,15 @@ Trigger otomatis untuk:
 - "WebGPU TSL shader game"
 - "Multiplayer browser game" / "WebXR VR game"
 
-Skill akan: intake 10 pertanyaan → desain arsitektur profesional → pilih framework (matrix 2026) → scaffold (CDN/Vite) → implement 15 sistem terurut → validasi 15 checklist → deliver runnable.
+Skill will: intake 10 questions → design professional architecture → select framework (matrix 2026) → scaffold (CDN/Vite) → implement 15 systems in order → validate 15 checklist → deliver runnable.
 
 ## Skill Structure v2
 
 ```
 bufatechno-webgamedev/
 ├── SKILL.md                       # Main skill — v2 professional ~375 lines (core) + Weak-Model Quick Start
-├── README.md                      # This file (v2.0.1)
-├── package.json                   # v2.0.1, MIT, three 0.175, vite 7, babylon 8.15, node >=20.19
+├── README.md                      # This file (v2.0.2)
+├── package.json                   # v2.0.2, MIT, three 0.175, vite 7, babylon 8.15, node >=20.19
 ├── references/                    # 20 deep-dive docs (2026, anti-slop included)
 │   ├── threejs-complete.md         # WebGPURenderer+TSL, PBR, post, GLTF, Timer
 │   ├── babylonjs-complete.md       # Engine, clustered lights, Frame Graph, Havok, Splatting
@@ -104,9 +104,9 @@ bufatechno-webgamedev/
     └── pwa/                       # manifest.json + sw.js (cache v2)
 ```
 
-## Design Principles v2.0.1
+## Design Principles v2.0.2
 
-1. **Famous-dev level** — playable 5 min, win/lose, anim+VFX+sound coherent, extendable code, anti-slop WAJIB/REQUIRED.
+1. **Famous-dev level** — playable 5 min, win/lose, anim+VFX+sound coherent, extendable code, anti-slop REQUIRED.
 2. **Self-contained** — procedural where possible, KTX2/SOG compressed where files needed, PWA cache.
 3. **Progressive disclosure** — SKILL ~375 lines core, 20 refs on-demand, Weak-Model Quick Start (≤14B) 4-step fallback.
 4. **2026-native** — WebGPU auto-fallback, TSL, clustered lights, Frame Graph, Timer fallback Clock, Havok, Splat.
@@ -116,7 +116,7 @@ bufatechno-webgamedev/
 
 ## Triggering Tips
 
-Deskripsi `SKILL.md` sengaja pushy — cover `animation`, `VFX`, `2D sprite`, `particle`, `skeleton`. Jika tidak trigger, prompt: "use the bufatechno-webgamedev skill".
+`SKILL.md` description is intentionally pushy — covers `animation`, `VFX`, `2D sprite`, `particle`, `skeleton`. If not triggering, prompt: "use the bufatechno-webgamedev skill".
 
 ## Updating
 
@@ -124,6 +124,18 @@ Deskripsi `SKILL.md` sengaja pushy — cover `animation`, `VFX`, `2D sprite`, `p
 cd /path/to/parent
 zip -r bufatechno-webgamedev.zip bufatechno-webgamedev/
 ```
+
+## Support — Donate via QRIS
+
+If this skill helps you ship games faster, consider supporting development via QRIS. Scan the QR code below with any Indonesian e-wallet or mobile banking app that supports QRIS (GoPay, OVO, DANA, ShopeePay, BCA mobile, etc.).
+
+<p align="center">
+  <img src="assets/images/qris.jpeg" alt="QRIS Donation QR Code" width="280" />
+</p>
+
+> The QRIS image is located at `assets/images/qris.jpeg` in this repository. Funds go directly to BUFATECHNO to maintain and improve the skill, templates, and references.
+
+Other ways to support: star the repo, share feedback via [Issues](https://github.com/bufatechno/bufatechno-webgamedev/issues), or contribute improvements via pull request.
 
 ## License
 

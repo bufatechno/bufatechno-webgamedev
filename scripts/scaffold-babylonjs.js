@@ -24,8 +24,8 @@ const indexHtml = `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>${name} — Starter (ganti judul themed)</title>
-  <!-- ANTI-SLOP: Starter — final WAJIB ganti tokens per design-system.md -->
+  <title>${name} — Starter (replace with themed title)</title>
+  <!-- ANTI-SLOP: Starter — final MUST replace tokens per design-system.md -->
   <style>
     :root{ --bg:#0a0e13; --panel:rgba(16,22,30,.72); --text:#e6edf3; --muted:#9aa8b3; --accent:#ffd166; --accent-2:#55ccff; --radius:14px; --font-display:"Space Grotesk",system-ui,sans-serif; --font-body:"Inter",system-ui,sans-serif; }
     html, body { margin:0; height:100%; overflow:hidden; background:var(--bg); color:var(--text); font-family:var(--font-body); }
@@ -38,7 +38,7 @@ const indexHtml = `<!DOCTYPE html>
 <body>
   <canvas id="renderCanvas"></canvas>
   <div id="hud"></div>
-  <div id="overlay"><div style="font-family:var(--font-display); letter-spacing:.1em; font-size:clamp(24px,4vw,44px)">\${name.toUpperCase()}</div><div class="hint">CLICK TO PLAY — GANTI THEMED PER GENRE</div><div style="margin-top:8px; color:var(--muted); font-size:11px">Starter anti-slop: ganti palette/HUD per design-system.md</div></div>
+  <div id="overlay"><div style="font-family:var(--font-display); letter-spacing:.1em; font-size:clamp(24px,4vw,44px)">\${name.toUpperCase()}</div><div class="hint">CLICK TO PLAY — REPLACE WITH THEMED PER GENRE</div><div style="margin-top:8px; color:var(--muted); font-size:11px">Starter anti-slop: replace palette/HUD per design-system.md</div></div>
   <script async src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"></script>
   <script type="importmap">
   {
@@ -192,7 +192,7 @@ fs.writeFileSync(path.join(projectDir, 'package.json'), JSON.stringify(packageJs
 fs.writeFileSync(path.join(projectDir, '.gitignore'), `node_modules/\ndist/\n.DS_Store\n*.log\n`);
 
 console.log(`✓ Created ${name}/`);
-console.log(`  - index.html (CDN 8.15.0 + havok, starter tokens — WAJIB themed)`);
+console.log(`  - index.html (CDN 8.15.0 + havok, starter tokens — MUST be themed)`);
 console.log(`  - src/Game.js (stub ${gameType} — customize per design-system.md)`);
 console.log(`  - package.json (babylon 8.15+havok, vite 7 baseline)`);
 console.log(`  - README.md`);
@@ -202,5 +202,5 @@ console.log(`  cd ${name}`);
 console.log(`  # Option A: open index.html in a browser (no build)`);
 console.log(`  # Option B: npm install && npm run dev (Vite dev server)`);
 console.log(``);
-console.log(`⚠️  ANTI-SLOP (WAJIB/REQUIRED): Scaffold starter GENERIK — jangan ship apa adanya!`);
-console.log(`   → Ganti palette/font/HUD/overlay per references/design-system.md`);
+console.log(`⚠️  ANTI-SLOP (REQUIRED): Scaffold starter is GENERIC — do not ship as-is!`);
+console.log(`   → Replace palette/font/HUD/overlay per references/design-system.md`);
