@@ -1,0 +1,56 @@
+{
+  "name": "bufatechno-webgamedev",
+  "version": "2.0.1",
+  "type": "module",
+  "description": "BUFATECHNO WEB GAME DEV - Professional skill for building complete, production-ready web games with Three.js (WebGPU/TSL) or Babylon.js (WebGPU/Havok). Covers project scaffolding, logic/ECS, visuals/PBR, graphics/WebGPU, VFX/particles, audio/Web Audio, 3D (GLTF/Draco/KTX2/Splat) / 2D (canvas/sprite) and animation (mixer/skeletal/morph/blending)",
+  "license": "MIT",
+  "author": "BUFATECHNO",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bufatechno/bufatechno-webgamedev"
+  },
+  "homepage": "https://github.com/bufatechno/bufatechno-webgamedev#readme",
+  "bugs": {
+    "url": "https://github.com/bufatechno/bufatechno-webgamedev/issues"
+  },
+  "keywords": [
+    "threejs",
+    "babylonjs",
+    "webgpu",
+    "webgl",
+    "tsl",
+    "gamedev",
+    "3d",
+    "web-game",
+    "fps",
+    "voxel",
+    "animation",
+    "vfx",
+    "physics",
+    "procedural",
+    "skill"
+  ],
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "files": [
+    "SKILL.md",
+    "README.md",
+    "INSTALL.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "references/",
+    "scripts/",
+    "assets/"
+  ],
+  "scripts": {
+    "scaffold-threejs": "node scripts/scaffold-threejs.js",
+    "scaffold-babylonjs": "node scripts/scaffold-babylonjs.js",
+    "test:smoke": "node --test test/smoke.test.js",
+    "lint": "echo \"no lint configured - add eslint if needed\""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vite": "^7.0.0"
+  }
+}

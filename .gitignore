@@ -1,0 +1,117 @@
+# # BUFATECHNO WEB GAME DEV — .gitignore untuk skill ZCode (z.ai) & Claude Code
+# # Fokus: HANYA ZCode (https://zcode.z.ai) + Claude Code (https://code.claude.com) — bukan OpenCode.
+# # Ref: ZCode Skill https://zcode.z.ai/en/docs/skill | Claude Skill https://code.claude.com/docs/en/skills
+# # PENTING npm: jangan buat .npmignore! Proyek ini pakai `files` di package.json (allowlist).
+# # Jika .npmignore dibuat, ia akan OVERRIDE .gitignore saat `npm publish` dan bisa bocorkan .env/.claude cache (insiden Claude Code 2026).
+
+# Dependencies
+node_modules/
+# Lockfile WAJIB di-commit untuk npm skill (deterministik). Jangan di-ignore.
+# Jika benar-benar tidak ingin, uncomment manual:
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+# bun.lockb
+
+# Build outputs (Vite / skill)
+dist/
+build/
+out/
+.output/
+.vite/
+.next/
+.nuxt/
+.cache/
+*.tsbuildinfo
+
+# Environment variables (jangan publish)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# Coverage & Test
+coverage/
+.nyc_output/
+junit.xml
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+
+# Editor / IDE (biarkan .vscode tidak ter-commit untuk skill)
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Vite
+vite.config.*.timestamp-*
+
+# --- Skill ZCode (z.ai) & Claude — local configs (JANGAN commit) ---
+# ZCode (resmi zcode.z.ai/docs/skill): 
+#   User-level: ~/.zcode/skills/<name>/SKILL.md  (global, semua workspace)
+#   Workspace-level: <workspace>/.zcode/skills/<name>/SKILL.md  (project only)
+#   Juga: ~/.zcode/commands/, ~/.zcode/agents/, ~/.zcode/cli/config.json
+.zcode/
+# Claude Code (code.claude.com/docs/skills):
+#   Personal: ~/.claude/skills/<name>/SKILL.md  (global)
+#   Project: .claude/skills/<name>/SKILL.md  (team, commit ke repo jika perlu)
+#   Juga: .claude/settings.local.json (jangan commit)
+.claude/
+
+# Tool lain (BUKAN ZCode z.ai) — hanya di-ignore agar tidak ter-commit saat dev lokal, bukan target distribusi:
+# OpenCode (anomalyco/opencode) ≠ ZCode (z.ai) — paths: .opencode/skills/, ~/.config/opencode/skills/
+.opencode/
+.agents/
+.codex/
+
+# --- Scaffold output — game hasil generate skill (hanya test lokal, JANGAN commit) ---
+my-game/
+my-babylon-game/
+game/
+test-scaffold/
+test-game/
+scaffold-test/
+playground/
+demo-game/
+*.splat
+*.ply
+*.spz
+*.sog
+
+# npm publish artifact (jangan commit tarball)
+*.tgz
+*.tar.gz
+
+# PENTING: File skill inti HARUS tetap ter-commit (SKILL.md, README.md, INSTALL.md, CHANGELOG.md, LICENSE, references/, scripts/, assets/, package.json)
+# Semua rule di atas sudah aman — tidak ada yang meng-ignore file inti tersebut.
+# Verifikasi: `git check-ignore -v SKILL.md` harus kosong, `npm pack --dry-run` harus list 36 files.
