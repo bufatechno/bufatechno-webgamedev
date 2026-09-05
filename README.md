@@ -34,6 +34,17 @@ Auto trigger for:
 
 Skill will: intake 10 questions → design professional architecture → select framework (matrix 2026) → scaffold (CDN/Vite) → implement 15 systems in order → validate 15 checklist → deliver runnable.
 
+## Screenshot Example — Games Built with This Skill
+
+Example output from this skill — voxel sandbox game (Three.js, procedural textures, day/time HUD, hotbar inventory):
+
+<p align="center">
+  <img src="screenshoot-example/1.png" alt="Voxel game example — third-person character in forest biome" width="49%" />
+  <img src="screenshoot-example/2.png" alt="Voxel game example — first-person grass terrain with trees" width="49%" />
+</p>
+
+> More examples in [`screenshoot-example/`](screenshoot-example/).
+
 ## Skill Structure
 
 ```
@@ -81,6 +92,9 @@ bufatechno-webgamedev/
 ├── scripts/
 │   ├── scaffold-threejs.js        # Three 0.175 + Vite 7 + animation/vfx dirs + shims
 │   └── scaffold-babylonjs.js      # Babylon 8.15 + Havok + Vite 7
+├── screenshoot-example/           # Example game screenshots built with this skill
+│   ├── 1.png                      # Voxel game — third-person forest biome
+│   └── 2.png                      # Voxel game — first-person grass terrain
 └── assets/
     ├── images/
     │   └── qris.jpeg              # QRIS donation QR code
