@@ -6,9 +6,9 @@ Professional skill **optimized for ZCode & Claude (primary)** to build **complet
 
 > **Quick Links:** [Installation](INSTALL.md) • [Changelog](CHANGELOG.md) • [Skill](SKILL.md) • [Support](#support--donate-via-qris)
 
-## What This Skill Does — Complete & Professional
+## What You Can Build
 
-Capable of comprehensively building **project, logic, visual, graphics, effects, audio, 3D imagery, 2D imagery, animation**:
+This skill covers the full scope of a browser 3D game — **project, logic, visuals, effects, audio, 3D, 2D, animation**:
 
 - **Structured project**: scaffold `src/world|player|animation|vfx|systems|assets|utils` + `public/manifest.json` + PWA `sw.js`, Path A CDN (double-click) or Path B Vite 7
 - **Game logic**: fixed-timestep 1/60 + `THREE.Timer`, StateMachine, ECS, object Pool, AI behavior states, save IndexedDB, multiplayer prediction/reconciliation
