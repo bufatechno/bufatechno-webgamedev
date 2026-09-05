@@ -2,7 +2,7 @@
   "name": "bufatechno-webgamedev",
   "version": "2.3.0",
   "type": "module",
-  "description": "BUFATECHNO WEB GAME DEV - Professional skill for building complete, production-ready web games with Three.js (WebGPU/TSL) or Babylon.js (WebGPU/Havok). Covers project scaffolding, logic/ECS, visuals/PBR, graphics/WebGPU, VFX/particles, audio/Web Audio, 3D (GLTF/Draco/KTX2/Splat) / 2D (canvas/sprite) and animation (mixer/skeletal/morph/blending)",
+  "description": "BUFATECHNO WEB GAME DEV - Skill for building complete, production-ready web games with Three.js (WebGPU/TSL) or Babylon.js (WebGPU/Havok). Covers project scaffolding, logic/ECS, visuals/PBR, graphics/WebGPU, VFX/particles, audio/Web Audio, 3D (GLTF/Draco/KTX2/Splat) / 2D (canvas/sprite) and animation (mixer/skeletal/morph/blending)",
   "license": "MIT",
   "author": "BUFATECHNO",
   "repository": {

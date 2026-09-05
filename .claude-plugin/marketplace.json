@@ -11,7 +11,7 @@
     {
       "name": "bufatechno-webgamedev",
       "source": "./plugins/bufatechno-webgamedev",
-      "description": "Professional skill for building complete, production-ready web games with Three.js (WebGPU/TSL) or Babylon.js (WebGPU/Havok)",
+      "description": "Skill for building complete, production-ready web games with Three.js (WebGPU/TSL) or Babylon.js (WebGPU/Havok)",
       "version": "2.3.0",
       "author": {
         "name": "BUFATECHNO",
