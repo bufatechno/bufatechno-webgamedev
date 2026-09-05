@@ -63,7 +63,7 @@ const indexHtml = `<!DOCTYPE html>
     "imports": {
       "three": "https://cdn.jsdelivr.net/npm/three@0.175.0/build/three.module.js",
       "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.175.0/examples/jsm/",
-      "three/tsl": "https://cdn.jsdelivr.net/npm/three@0.175.0/examples/jsm/nodes/Nodes.js",
+      "three/tsl": "https://cdn.jsdelivr.net/npm/three@0.175.0/build/three.tsl.js",
       "three/webgpu": "https://cdn.jsdelivr.net/npm/three@0.175.0/build/three.webgpu.js"
     }
   }

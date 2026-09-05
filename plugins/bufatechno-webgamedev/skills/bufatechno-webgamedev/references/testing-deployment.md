@@ -99,6 +99,62 @@ Run through this checklist before declaring a game "done". This is the minimum b
 
 ## Automated Smoke Test
 
+Test in two layers: **headless logic first** (fast, no browser, runs on every revision),
+**browser smoke second** (Playwright, pre-deploy). Both must be green before ship.
+
+### 2a. Headless Logic Tests — REQUIRED (no browser needed)
+
+Split pure game logic (state machine, fixed-timestep, pool, scoring) into a module with
+zero DOM/THREE imports, then test it with the Node.js built-in runner — no dependencies:
+
+```js
+// test/logic.test.js — Run with: node --test test/
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { Game, STEP } from '../src/GameLogic.js';
+
+test('win reachable: 10 hits → won', () => {
+  const g = new Game();
+  g.start();
+  for (let i = 0; i < 10; i++) { g.frame(STEP); assert.ok(g.shoot()); }
+  assert.equal(g.state, 'won');
+});
+
+test('lose reachable + restart resets', () => {
+  const g = new Game();
+  g.start();
+  for (let i = 0; i < 4 && g.state === 'playing'; i++) {
+    const e = g.enemies.acquire(); // contact on next update
+    e.x = 0.5; e.z = 0;
+    g.frame(STEP);
+  }
+  assert.equal(g.state, 'lost');
+  g.start();
+  assert.deepEqual([g.state, g.score, g.health], ['playing', 0, 100]);
+});
+
+test('dt clamp: hidden-tab gap does not spiral', () => {
+  const g = new Game();
+  g.start();
+  g.frame(5.0); // clamped to 0.1 → exactly 6 fixed steps
+  assert.ok(Math.abs(g.time - 6 * STEP) < 1e-9);
+});
+```
+
+Minimum headless coverage (every game): state transitions, win reachable, lose reachable,
+restart reset, pause freeze/resume, dt clamp, pool bounds (never exceeds maxSize).
+
+### 2b. Revision Loop — REQUIRED after every fix
+
+A fix that is not re-tested is a guess. After ANY code change:
+
+1. Re-run `node --test test/` — full suite, zero failures (never a subset).
+2. Re-run the scaffold/build smoke (`vite build` succeeds, importmap pins resolve).
+3. Re-check only the manual matrix rows the fix touches, plus win→restart once end-to-end.
+4. If step 1 or 2 fails, fix again from step 1 — do not proceed to manual testing.
+
+### 2c. Browser Smoke Test (Playwright, pre-deploy)
+
 For CI/CD or pre-deploy verification, write a smoke test that:
 1. Loads the page in a headless browser (Puppeteer/Playwright)
 2. Checks for console errors

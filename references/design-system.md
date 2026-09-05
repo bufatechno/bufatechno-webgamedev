@@ -92,3 +92,18 @@ Prompt: `forest horror survival game`
 - [ ] HUD layout different from starter template
 - [ ] 1 procedural texture + 1 TSL/shader tweak unique
 - [ ] Mental screenshot different from previous game — not generic
+
+## 8. External-Library Anti-Slop (Full Profile Games)
+
+Third-party libraries must not smuggle generic output back in. Full rules, fallback
+proof, and validation items live in `external-libraries.md §7` — summary:
+
+- **Theme every Full artifact**: joystick colors, tween easings, track choice, and any
+  sample/demo content must use this game's tokens, palette, and mood. Default white
+  `nipplejs` zone or unstyled `gsap` demo timing on a horror game is slop — hard fail.
+- **One driver per object**: `AnimationMixer` XOR `gsap` on the same bone/property,
+  never both in the same frame (causes sliding and weight fights).
+- **Fallback proven**: with CDN blocked (offline devtools), menu → playing → win/lose
+  still completes on the Lite path.
+- **Credits shipped**: game README lists each third-party script/asset (name, author,
+  license, version). Missing attribution fails validation, same as `GAME TITLE`.

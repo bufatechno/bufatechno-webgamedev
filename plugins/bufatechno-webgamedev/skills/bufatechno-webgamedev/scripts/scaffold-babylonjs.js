@@ -40,6 +40,7 @@ const indexHtml = `<!DOCTYPE html>
   <div id="hud"></div>
   <div id="overlay"><div style="font-family:var(--font-display); letter-spacing:.1em; font-size:clamp(24px,4vw,44px)">\${name.toUpperCase()}</div><div class="hint">CLICK TO PLAY — REPLACE WITH THEMED PER GENRE</div><div style="margin-top:8px; color:var(--muted); font-size:11px">Starter anti-slop: replace palette/HUD per design-system.md</div></div>
   <script async src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"></script>
+  <link rel="manifest" href="./public/manifest.json" />
   <script type="importmap">
   {
     "imports": {

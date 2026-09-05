@@ -4,7 +4,7 @@ description: BUFATECHNO WEB GAME DEV — Professional skill for building complet
 license: MIT
 compatibility: zcode, claude
 metadata:
-  version: "2.0.3"
+  version: "2.3.0"
   author: BUFATECHNO
   homepage: https://github.com/bufatechno/bufatechno-webgamedev
 ---
@@ -40,6 +40,7 @@ If one missing, iterate. You ship **games, not demos**.
 
 **Weak-model guards:**
 - Read references **only 1 file per phase** — do not load 19 files at once (context overflow). Priority: `threejs-complete.md §1-7` + `game-architecture.md §1` + `design-system.md`.
+- Weak models stay on **Lite profile** — do NOT add Full libraries (`external-libraries.md` is for capable models only).
 - Use `THREE.Timer ? new THREE.Timer() : new THREE.Clock()` fallback — do not assume Timer exists.
 - If prompt conflicts across multi-row, use priority above. Show assumptions in README `Inferred: ...`.
 - Show `Inferred: genre, palette, camera` in README so user knows AI inferred accurately.
@@ -152,6 +153,14 @@ See `references/game-architecture.md` + `references/animation-system.md` for ECS
 
 When silent: **Three.js WebGPURenderer** (safest one-shot).
 
+**Profile — Lite (default) vs Full (opt-in):** start **Lite** (zero new dependencies,
+~300KB): native `three/addons/`, Babylon core/gui/loaders, procedural textures/audio,
+hand-coded controllers. Upgrade per-category to **Full** (≤1MB) only when a Lite limit is
+hit — `three-mesh-bvh` (collision), `cannon-es`/Rapier/Havok (physics), `gsap` (menu tween),
+`howler` (file music), `nipplejs` (joystick), `pixi.js` (2D-heavy only). See
+`references/external-libraries.md` for versions, CDN+npm snippets, fallbacks, and credits.
+Declare `Profile: Lite` or `Profile: Full (+libs)` in the game README.
+
 ### Phase 4: Build & Scaffold
 
 **Path A — Zero-build CDN (prefer for instant playable):**
@@ -173,7 +182,7 @@ When silent: **Three.js WebGPURenderer** (safest one-shot).
     "imports": {
       "three": "https://cdn.jsdelivr.net/npm/three@0.175.0/build/three.module.js",
       "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.175.0/examples/jsm/",
-      "three/tsl": "https://cdn.jsdelivr.net/npm/three@0.175.0/examples/jsm/nodes/Nodes.js",
+      "three/tsl": "https://cdn.jsdelivr.net/npm/three@0.175.0/build/three.tsl.js",
       "three/webgpu": "https://cdn.jsdelivr.net/npm/three@0.175.0/build/three.webgpu.js"
     }
   }</script>
@@ -203,14 +212,14 @@ Build in **exact order** to avoid rework:
 
 1. **Renderer + Scene + Camera + Lights + Shadows + Fog** — visible cube first. Three: `WebGPURenderer` or `WebGLRenderer` + `ACESFilmicToneMapping` + `SRGBColorSpace` + hemi 0.6 + directional 2.0 2048² + `Fog(0x87ceeb,30,100)`. Babylon: `Engine` + `hardwareScalingLevel Math.min(dpr,2)` + `HemisphericLight` + `DirectionalLight` + shadows. Verify resize + context loss.
 2. **Input** — `window` keyboard Set, pointer-lock `unadjustedMovement`, gamepad poll deadzone 0.15, touch `VirtualJoystick` + look pad. (`references/input-controls.md`)
-3. **Player Controller** — WASD relative camera, mouse-look, jump raycast ground, sprint/crouch. No physics yet.
-4. **Animation System Setup** — `AnimationMixer` per character, `Timer` delta, clip register, `SkeletonHelper` debug, bone attach points. (`references/animation-system.md`)
-5. **Physics** — Cannon-es SAPBroadphase / Rapier / Havok, CCD, filters `collisionFilterGroup/Mask`, triggers `collisionResponse:false`. (`references/physics-collision.md`)
-6. **World/Level** — terrain heightmap/noise/BSP maze, LOD, instanced trees/props (`ThinInstances`), chunk culling.
+3. **Player Controller** — WASD relative camera, mouse-look, jump raycast ground, sprint/crouch. No physics yet. Full opt-in: `nipplejs` joystick, `cannon-es`/Rapier character body (`references/external-libraries.md §3, §5.2`).
+4. **Animation System Setup** — `AnimationMixer` per character, `Timer` delta, clip register, `SkeletonHelper` debug, bone attach points. (`references/animation-system.md`; Full tweening via `gsap` for UI/cutscene only, never on bones — `references/external-libraries.md §3.2`)
+5. **Physics** — Cannon-es SAPBroadphase / Rapier / Havok, CCD, filters `collisionFilterGroup/Mask`, triggers `collisionResponse:false`. (`references/physics-collision.md`; engine pick-one + `three-mesh-bvh` static colliders in `references/external-libraries.md §2.2, §3.3`)
+6. **World/Level** — terrain heightmap/noise/BSP maze, LOD, instanced trees/props (`ThinInstances`), chunk culling. Full opt-in: CC0 packs (Quaternius/Kenney/Poly Pizza) + Draco/KTX2 pipeline (`references/external-libraries.md §2.3`).
 7. **Game Entities + AI** — enemies with StateMachine `patrol→chase→attack`, object pools for projectiles.
 8. **Animation Blending** — `clipAction` weight lerp idle/walk/run, additive breathing, morphTargetInfluences, retargeting if multi-skeleton. (`references/animation-system.md#blending`)
 9. **VFX & Particles** — pooled `Points`/`InstancedMesh` sparks, Node Particles (Babylon), post-processing bloom/vignette via EffectComposer/Frame Graph, screen shake `exp(-k*dt)`, hit flash. (`references/vfx-particles.md`)
-10. **Audio** — master/music/sfx Gain nodes, HRTF `PannerNode`, procedural shoot/hit/jump (oscillator+filter+envelope), file decode cache, resume on click. (`references/audio-ui-systems.md`)
+10. **Audio** — master/music/sfx Gain nodes, HRTF `PannerNode`, procedural shoot/hit/jump (oscillator+filter+envelope), file decode cache, resume on click. (`references/audio-ui-systems.md`; Full file music via `howler` in `references/external-libraries.md §5.3`)
 11. **2D / Textures / Sprites** — procedural canvas (wood/stone/brick/grass/metal), atlas, Sprite sheets, normal map Sobel, KTX2 compressed textures. (`references/2d-drawing-textures.md`, `asset-pipeline.md`)
 12. **Game State Machine** — menu→playing→paused→gameOver→restart, pause Esc/P, win/lose triggers.
 13. **Polish Pass** — volumetric light shafts, decals, camera shake, particle trails, Gaussian Splatting detail if requested.
@@ -219,7 +228,15 @@ Build in **exact order** to avoid rework:
 
 ### Phase 6: Validation Checklist — Must All Pass
 
-Before ship, every box must tick (see `references/testing-deployment.md` diagnostics):
+Before ship, every box must tick (see `references/testing-deployment.md` diagnostics).
+**Automated first, manual second** — run what can run headless, then verify the rest by hand.
+When something breaks, triage per `references/debugging.md` (console → network → state → frame → isolate) — never edit blindly:
+
+- [ ] `node --test test/` green on a headless pure-logic module (state machine, win/lose reachability, restart reset, dt clamp, pool bounds — pattern in `testing-deployment.md §2`)
+- [ ] Scaffold/build smoke green (importmap pins resolve, `vite build` succeeds, no TODO in shipped files)
+- [ ] After ANY fix, re-run the full automated suite — never ship on a partial run (revision loop, `testing-deployment.md §2`)
+
+Manual checklist (all must tick):
 
 - [ ] Opens fresh tab zero console errors/warnings
 - [ ] Resize + orientation + high-DPR correct
@@ -261,11 +278,13 @@ Before ship, every box must tick (see `references/testing-deployment.md` diagnos
 - `references/audio-ui-systems.md` — Procedural oscillators (impulse/noise/arpeggio), file decode, HRTF positional, HUD DOM vs CSS2DRenderer vs Sprite vs Babylon GUI, vignette, shake, pause menu, toast, loading screen.
 - `references/2d-drawing-textures.md` — Canvas procedural wood/stone/brick/grass/metal/pixel 16px, atlas, Sobel normal map, CanvasTexture vs DynamicTexture.
 - `references/asset-pipeline.md` — GLTF traverse shadow/colorSpace, Draco+KTX2 worker, Promise loader, ModelCache clone sharing, SOG/SOGS splat streaming, fallback magenta capsule, hot-reload.
+- `references/external-libraries.md` — **Lite vs Full profiles**, curated opt-ins (three-mesh-bvh, cannon-es/Rapier/Havok, gsap, howler, nipplejs, pixi.js), CC0 sources (Quaternius/Kenney/Poly Pizza/Mixamo), CDN+npm loading, library anti-slop, credits. **Read before adding any third-party script.**
 
 ### Quality & Shipping
 - `references/design-system.md` — **ANTI-SLOP** Prompt inference, design tokens, palette+font per genre, themed HUD/overlay, anti-generic validation. **REQUIRED reading before writing HTML/HUD.**
 - `references/performance-optimization.md` — Profiling renderer.info.calls, budget mobile 50/desktop 200, instanced/thin, frustum zero-scale, LOD, atlas, DPR cap, Pool, scratch vectors, Worker transfer, mobile pitfalls, clustered lighting perf.
 - `references/testing-deployment.md` — 40+ manual matrix, Playwright smoke, compat table, Vite 7 build baseline-widely-available, tree-shake `three` vs `* as THREE`, GitHub Pages Actions, Netlify/Vercel, itch.io zip, PWA manifest+sw, Sentry, gtag.
+- `references/debugging.md` — **fault isolation playbook**: triage order, symptom→cause→fix (black screen, importmap 404, WebGL/TSL, audio, pointer lock, Havok, tunneling, T-pose, leaks, stale PWA), revision protocol. **Read before touching broken code.**
 - `references/multiplayer-networking.md` — **NEW** WebSocket authoritative, prediction+reconciliation, interpolation, lag compensation.
 - `references/webxr-vr.md` — **NEW** WebXR session, XR camera, controllers, locomotion.
 
@@ -323,7 +342,7 @@ Before ship, every box must tick (see `references/testing-deployment.md` diagnos
 Every game must include:
 1. `index.html` — runnable via importmap+shims (Path A) or `npm i && npm run dev` (Path B)
 2. `src/` — full source organized per Phase 2 (include `animation/` + `vfx/` if needed)
-3. `README.md` — how to run, controls, features, limits, perf notes
+3. `README.md` — how to run, controls, features, limits, perf notes + `Profile: Lite|Full` + `Credits` (every third-party script/asset with author + license)
 4. `public/manifest.json` + `sw.js` if PWA requested
 5. Screenshot/GIF if requested (agent-browser capture)
 
@@ -353,6 +372,7 @@ When done, tell user:
 - [ ] Unique palette & font (check design-system.md) — not generic black-monospace?
 - [ ] Overlay & HUD themed to genre — not template copy?
 - [ ] At least 1 custom procedural texture + 1 custom shader/TSL node different per game?
+- [ ] Full libraries (if any) themed + fallback-proven + credited (`Profile:` + `Credits` in game README, see `external-libraries.md §7–§8`)?
 
 If failed, **regenerate visual layer** until unique identity is achieved.
 

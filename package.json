@@ -1,6 +1,6 @@
 {
   "name": "bufatechno-webgamedev",
-  "version": "2.0.3",
+  "version": "2.3.0",
   "type": "module",
   "description": "BUFATECHNO WEB GAME DEV - Professional skill for building complete, production-ready web games with Three.js (WebGPU/TSL) or Babylon.js (WebGPU/Havok). Covers project scaffolding, logic/ECS, visuals/PBR, graphics/WebGPU, VFX/particles, audio/Web Audio, 3D (GLTF/Draco/KTX2/Splat) / 2D (canvas/sprite) and animation (mixer/skeletal/morph/blending)",
   "license": "MIT",
@@ -46,7 +46,10 @@
   "scripts": {
     "scaffold-threejs": "node scripts/scaffold-threejs.js",
     "scaffold-babylonjs": "node scripts/scaffold-babylonjs.js",
-    "test:smoke": "node --test test/smoke.test.js",
+    "sync:plugin": "node scripts/sync-plugin.js",
+    "test": "node --test test/",
+    "test:smoke": "node --test test/scaffold.test.js",
+    "test:skill": "node --test test/skill.test.js",
     "lint": "echo \"no lint configured - add eslint if needed\""
   },
   "dependencies": {},

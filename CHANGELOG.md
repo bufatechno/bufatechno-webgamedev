@@ -1,5 +1,51 @@
 # Changelog
 
+## v2.3.0 — 2026-09-06
+
+### Added
+- Added `references/debugging.md`: fault-isolation playbook (triage order console → network → state → frame → isolate, 11 symptom→cause→fix entries, revision protocol, anti-guesswork rules) — indexed in `SKILL.md` and `README.md` (22 reference docs)
+- Added `scripts/sync-plugin.js` (`npm run sync:plugin`): deterministic root → marketplace-bundle mirror with orphan pruning, replacing error-prone manual copies
+- Extended `test/skill.test.js` bundled-sync check from 7 hardcoded pairs to a full-mirror walk (30+ files) plus orphan detection
+
+### Fixed
+- Fixed marketplace-bundle drift on `scripts/scaffold-threejs.js` (TSL pin fix never copied over) — caught by the new full-mirror test
+
+### Changed
+- Bumped version `2.2.0` → `2.3.0` in `package.json`, `SKILL.md`, plugin manifests, and marketplace catalogs
+
+## v2.2.0 — 2026-09-06
+
+### Added
+- Added `test/` automated suite (offline, zero dependencies, `npm test`): `skill.test.js` (version sync, bundled-copy sync, pin consistency, link targets, opt-in CDN check via `RUN_NETWORK_TESTS=1`) and `scaffold.test.js` (scaffold smoke: structure, `node --check`, fixed-step/dt-clamp/overlay invariants, opt-in `vite build` via `RUN_BUILD_TESTS=1`)
+- Added headless game-logic test pattern + mandatory revision loop (`testing-deployment.md` §2a–§2b): `node --test test/` must be green after every fix before manual testing
+- Extended `SKILL.md` Phase 6 with automated-first validation items (logic tests, build smoke, full re-run on any fix)
+
+### Fixed
+- Fixed `test:smoke` script pointing at non-existent `test/smoke.test.js` — now runs `test/scaffold.test.js`; added `test` and `test:skill` scripts
+- Fixed Babylon scaffold `index.html` missing PWA `manifest` link (caught by new scaffold test)
+- Corrected `three/tsl` importmap from 404 `examples/jsm/nodes/Nodes.js` to `build/three.tsl.js` in `SKILL.md`, `scaffold-threejs.js`, and Three.js template
+
+### Changed
+- Bumped version `2.1.0` → `2.2.0` in `package.json`, `SKILL.md`, plugin manifests, and marketplace catalogs
+- Updated `README.md` skill structure with `test/` directory
+
+## v2.1.0 — 2026-09-06
+
+### Added
+- Added `references/external-libraries.md`: Lite vs Full profiles with curated opt-ins for 3D/2D models (`three-mesh-bvh`, CC0 sources Quaternius/Kenney/Poly Pizza/Mixamo), animation and character control (`gsap` for UI/cutscene only, `cannon-es`/Rapier/Havok physics pick-one), and menus/interfaces (`nipplejs`, `howler`, `pixi.js` for 2D-heavy only) — each with 2026 version pins, Path A CDN + Path B npm snippets, Lite fallback rule, and budget (300KB Lite vs ≤1MB Full)
+- Added external-library anti-slop rules (`external-libraries.md` §7, summarized in `design-system.md` §8): themed usage, one animation driver per object, CDN-blocked fallback proof, shipped attribution
+- Added `Credits & Third-Party` section to `README.md` with full credit table in `external-libraries.md` §8
+- Added `optionalDependencies` (Full opt-ins) to `assets/templates/threejs/package.json` and `assets/templates/babylonjs/package.json`; added commented Full importmap blocks to both `index.html` templates
+- Extended `SKILL.md` Phase 3 with Lite/Full profile selection, Phase 5 with per-step Full pointers, validation checklist with profile/fallback/credit items, and Weak-Model Lite-only guard
+
+### Changed
+- Bumped version `2.0.3` → `2.1.0` in `package.json`, `SKILL.md`, plugin manifests, and marketplace catalogs
+- Updated `README.md` feature list, skill structure (21 reference docs), and design principles for Lite/Full profiles
+- Synced bundled marketplace copy at `plugins/bufatechno-webgamedev/skills/bufatechno-webgamedev` with root skill and references
+
+### Credits
+- Third-party code and assets referenced by this release are credited in `references/external-libraries.md` §8: `three`, `three-mesh-bvh`, `@babylonjs/*` + Havok, `cannon-es`, Rapier, `gsap`, `howler.js`, `nipplejs`, `pixi.js`, `es-module-shims`, `vite`, Quaternius, Kenney.nl, Poly Pizza, Mixamo
+
 ## v2.0.3 — 2026-09-03
 
 ### Added
