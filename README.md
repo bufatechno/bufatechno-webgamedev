@@ -4,7 +4,7 @@ Skill **optimized for ZCode & Claude (primary)** to build **complete, production
 
 > 2026 stack: `three@^0.175.0` (WebGPURenderer + TSL NodeMaterial), `@babylonjs/*@^8.15.0` (clustered lighting, Frame Graph, Gaussian Splatting), `vite@^7.0.0` (baseline-widely-available, Rolldown). Primary support: ZCode & Claude.
 
-> **Quick Links:** [Installation](INSTALL.md) • [Changelog](CHANGELOG.md) • [Skill](SKILL.md) • [Support](#support--donate-via-qris)
+> **Quick Links:** [Installation](INSTALL.md) • [Changelog](CHANGELOG.md) • [Skill](SKILL.md) • [Support](#support--donate)
 
 ## What You Can Build
 
@@ -103,7 +103,8 @@ bufatechno-webgamedev/
 │   └── 2.png                      # Voxel game — first-person grass terrain
 └── assets/
     ├── images/
-    │   └── qris.jpeg              # QRIS donation QR code
+    │   ├── qris.jpeg              # QRIS donation QR code
+    │   └── btc.jpeg               # Bitcoin donation QR code
     ├── templates/
     │   ├── threejs/               # index.html (shims+TSL), package, vite baseline
     │   └── babylonjs/             # index.html, package 8.15, vite baseline
@@ -124,15 +125,33 @@ bufatechno-webgamedev/
 
 `SKILL.md` description is intentionally pushy — covers `animation`, `VFX`, `2D sprite`, `particle`, `skeleton`. If not triggering, prompt: "use the bufatechno-webgamedev skill".
 
-## Support — Donate via QRIS
+## Support — Donate
 
-If this skill helps you ship games faster, consider supporting development via QRIS. Scan the QR code below with any Indonesian e-wallet or mobile banking app that supports QRIS (GoPay, OVO, DANA, ShopeePay, BCA mobile, etc.).
+If this skill helps you ship games faster, consider supporting development via QRIS or Bitcoin.
+
+### QRIS
+
+Scan the QR code below with any Indonesian e-wallet or mobile banking app that supports QRIS (GoPay, OVO, DANA, ShopeePay, BCA mobile, etc.).
 
 <p align="center">
   <img src="assets/images/qris.jpeg" alt="QRIS Donation QR Code" width="280" />
 </p>
 
 > The QRIS image is located at `assets/images/qris.jpeg` in this repository. Funds go directly to BUFATECHNO to maintain and improve the skill, templates, and references.
+
+### Bitcoin
+
+Scan the QR code below with any Bitcoin wallet app, or send to the address directly:
+
+<p align="center">
+  <img src="assets/images/btc.jpeg" alt="Bitcoin Donation QR Code" width="280" />
+</p>
+
+```
+13cfuHxtoouAVBaBC6tFVBR4mbiJfUjNUD
+```
+
+> The Bitcoin QR image is located at `assets/images/btc.jpeg` in this repository.
 
 Other ways to support: star the repo, share feedback via [Issues](https://github.com/bufatechno/bufatechno-webgamedev/issues), or contribute improvements via pull request.
 
