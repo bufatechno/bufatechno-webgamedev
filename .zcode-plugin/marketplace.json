@@ -10,7 +10,8 @@
       "version": "2.3.0",
       "category": "gamedev",
       "tags": ["threejs", "babylonjs", "webgpu", "gamedev", "3d", "vfx"],
-      "author": "BUFATECHNO"
+      "author": "BUFATECHNO",
+      "license": "MIT"
     }
   ]
 }

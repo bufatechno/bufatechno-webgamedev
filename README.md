@@ -171,4 +171,4 @@ MIT — use, modify, distribute freely.
 
 ## Author
 
-BUFATECHNO — Professional Web Game Dev Skill (2026). Research-backed: Three.js TSL docs, Babylon.js 9.0 release, Vite 7 baseline.
+BUFATECHNO (https://bufatechno.com)
